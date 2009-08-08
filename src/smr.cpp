@@ -25,7 +25,6 @@ Smr::Smr(QStringList args, QMainWindow* parent, Qt::WFlags flags): QMainWindow (
  	setupUi(this);
 	chaptersTreeWidget = new QTreeWidget;
 	chaptersTreeWidget->setColumnCount(3);
-	currentItem = new QTreeWidgetItem;
 	backMenu = new QMenu();
 	backToolButton->setMenu(backMenu);
 	forwardMenu = new QMenu();
@@ -127,13 +126,10 @@ void Smr::showChapter0(QTreeWidgetItem* item, int i) {
 			item->setExpanded(TRUE);
 		return;
 	}
-	if( currentItem->columnCount() > 1)
-		backHistory.prepend( currentItem->text(1) );
+	//if( currentItem->columnCount() > 1)
+	//	backHistory.prepend( currentItem->text(1) );
 	forwardHistory.clear();
 	showChapter(item->text(1));
-	
-	currentItem = item;
-	
 	
 }
 
@@ -205,16 +201,15 @@ void Smr::showChapter(QString id) {
 
 
         // show previous/next buttons
-	
-	currentCapter = h2IdList.indexOf(id);
-	if( currentCapter > 0 ) {
-		previousPushButton->setText( h2List[currentCapter-1] );
+	currentChapter = h2IdList.indexOf(id);
+	if( currentChapter > 0 ) {
+		previousPushButton->setText( h2List[currentChapter-1] );
 		previousPushButton->show();
 	}
 	else
 		previousPushButton->hide();
-	if(currentCapter < h2List.count() ) {
-		nextPushButton->setText( h2List[currentCapter+1] );
+	if(currentChapter < h2List.count() ) {
+		nextPushButton->setText( h2List[currentChapter+1] );
 		nextPushButton->show();
 	}
 	else
@@ -266,7 +261,7 @@ void Smr::showUrl(QUrl input) {
 			id = chaptersTreeWidget->findItems(id, Qt::MatchExactly, 2).first()->text(1);
 	}
 	id = id.split("#")[1];
-	backHistory.prepend( currentItem->text(1) );
+	backHistory.prepend( h2IdList[currentChapter] );
 	forwardHistory.clear();
 	showChapter( id );
 }
@@ -280,7 +275,7 @@ void Smr::showUrl(QUrl input) {
 void Smr::back() {
 	if( backHistory.count() == 0)
 		return;
-	forwardHistory.prepend( currentItem->text(1) );
+	forwardHistory.prepend( h2IdList[currentChapter] );
 	QString id = backHistory.first();
 	backHistory.removeFirst();
 	showChapter( id );
@@ -293,7 +288,7 @@ void Smr::back1(QAction* action) {
 		forwardHistory.prepend( backHistory.first() );
 		backHistory.removeFirst();
 	}
-	forwardHistory.append( currentItem->text(1) );
+	forwardHistory.append( h2IdList[currentChapter] );
 	backHistory.removeFirst();
 	showChapter( id );
 }
@@ -302,7 +297,7 @@ void Smr::back1(QAction* action) {
 void Smr::forward() {
 	if( forwardHistory.count() == 0)
 		return;
-	backHistory.prepend( currentItem->text(1) );
+	backHistory.prepend( h2IdList[currentChapter] );
 	QString id = forwardHistory.first();
 	forwardHistory.removeFirst();
 	showChapter( id );
@@ -316,23 +311,23 @@ void Smr::forward1(QAction* action) {
 		backHistory.prepend( forwardHistory.first() );
 		forwardHistory.removeFirst();
 	}
-	backHistory.append( currentItem->text(1) );
+	backHistory.append( h2IdList[currentChapter] );
 	forwardHistory.removeFirst();
 	showChapter( id );
 }
 
 
 void Smr::next() {
-	backHistory.prepend( currentItem->text(1) );
+	backHistory.prepend( h2IdList[currentChapter] );
 	forwardHistory.clear();
-	showChapter( h2IdList[currentCapter+1] );
+	showChapter( h2IdList[currentChapter+1] );
 }
 
 
 void Smr::previous() {
-	backHistory.prepend( currentItem->text(1) );
+	backHistory.prepend( h2IdList[currentChapter] );
 	forwardHistory.clear();
-	showChapter( h2IdList[currentCapter-1] );
+	showChapter( h2IdList[currentChapter-1] );
 }
 
 void Smr::exec() {
@@ -359,13 +354,13 @@ void Smr::exec() {
 
 
 void Smr::quickstart() {
-	backHistory.prepend( currentItem->text(1) );
+	backHistory.prepend( h2IdList[currentChapter] );
 	forwardHistory.clear();
 	showChapter( "welcome-quick" );
 }
 
 void Smr::aboutSidux() {
-	backHistory.prepend( currentItem->text(1) );
+	backHistory.prepend( h2IdList[currentChapter] );
 	forwardHistory.clear();
 	showChapter( "cred-team" );
 }
@@ -417,6 +412,8 @@ void Smr::loadManual() {
 	backMenu->clear();
 	forwardHistory.clear();
 	forwardMenu->clear();
+	h2List.clear();
+	h2IdList.clear();
 
 	QString manpath2 = manpath+lang+"/";
 	QStringList pages = QDir( manpath2 ).entryList( QDir::Files );

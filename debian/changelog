@@ -2,5 +2,6 @@ sidux-manual-reader (0.1.0) unstable; urgency=low
 
   [ Fabian Wuertz ]
   * Initial release.
+  * Language change problem solved
 
- -- Fabian Wuertz <xadras@sidux.com>  Sat, 8 Aug 2009 13:59:59 +0100
+ -- Fabian Wuertz <xadras@sidux.com>  Sat, 08 Aug 2009 14:35:38 +0200

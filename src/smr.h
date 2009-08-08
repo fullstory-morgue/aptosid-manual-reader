@@ -65,8 +65,7 @@ class Smr : public QMainWindow, Ui::Smr {
 
 	private:
 		QTreeWidget *chaptersTreeWidget;
-		QTreeWidgetItem *currentItem;
-		int currentCapter;
+		int currentChapter;
 		QString manpath;
 		QProcess proc;
 		QStringList backHistory, forwardHistory, h2List, h2IdList;
