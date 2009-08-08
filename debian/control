@@ -1,0 +1,19 @@
+Source: sidux-manual-reader
+Section: admin
+Priority: extra
+Maintainer: Fabian Wuertz <xadras@sidux.com>
+Uploaders: Stefan Lippers-Hollmann <s.l-h@gmx.de>, Ferdinand Thommes <devil@sidux.com>
+Build-Depends: cdbs,
+               debhelper (>= 7),
+               libqt4-dev,
+               qt4-qmake,
+Standards-Version: 3.8.0
+
+Package: sidux-manual-reader
+Architecture: any
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+         menu,
+         sidux-apt-qt4
+Description: sidux manual reader
+  A reader for the sidux manual.

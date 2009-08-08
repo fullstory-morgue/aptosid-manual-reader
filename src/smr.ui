@@ -1,0 +1,1129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Smr</class>
+ <widget class="QMainWindow" name="Smr">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>754</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>sidux Manual Reader</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout_2">
+    <property name="margin">
+     <number>4</number>
+    </property>
+    <item row="1" column="0">
+     <widget class="QWidget" name="searchWidget" native="true">
+      <layout class="QGridLayout" name="gridLayout">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <item row="0" column="0">
+        <widget class="QLineEdit" name="searchLineEdit">
+         <property name="dragEnabled">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QToolButton" name="searchToolButton">
+         <property name="text">
+          <string>Search</string>
+         </property>
+         <property name="popupMode">
+          <enum>QToolButton::DelayedPopup</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QWidget" name="menuWidget" native="true">
+      <layout class="QGridLayout" name="gridLayout_10" rowstretch="0">
+       <property name="margin">
+        <number>0</number>
+       </property>
+       <property name="spacing">
+        <number>-1</number>
+       </property>
+       <item row="0" column="2">
+        <widget class="QToolButton" name="backToolButton">
+         <property name="text">
+          <string>Back</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-previous.png</normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-previous.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="popupMode">
+          <enum>QToolButton::MenuButtonPopup</enum>
+         </property>
+         <property name="toolButtonStyle">
+          <enum>Qt::ToolButtonTextUnderIcon</enum>
+         </property>
+         <property name="autoRaise">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QToolButton" name="indexToolButton">
+         <property name="text">
+          <string>Index</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-home.png</normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-home.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="toolButtonStyle">
+          <enum>Qt::ToolButtonTextUnderIcon</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="4">
+        <spacer name="horizontalSpacer">
+         <property name="orientation">
+          <enum>Qt::Horizontal</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>40</width>
+           <height>20</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+       <item row="0" column="3">
+        <widget class="QToolButton" name="forwardToolButton">
+         <property name="text">
+          <string>Forward</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-next.png</normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-next.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="popupMode">
+          <enum>QToolButton::MenuButtonPopup</enum>
+         </property>
+         <property name="toolButtonStyle">
+          <enum>Qt::ToolButtonTextUnderIcon</enum>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QToolButton" name="quickstartToolButton">
+         <property name="text">
+          <string>Quickstart</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>../../../../../usr/share/sidux-manual-reader/icons/user-away-extended.png</normaloff>../../../../../usr/share/sidux-manual-reader/icons/user-away-extended.png</iconset>
+         </property>
+         <property name="iconSize">
+          <size>
+           <width>22</width>
+           <height>22</height>
+          </size>
+         </property>
+         <property name="toolButtonStyle">
+          <enum>Qt::ToolButtonTextUnderIcon</enum>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="4" column="0">
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="currentIndex">
+       <number>1</number>
+      </property>
+      <widget class="QWidget" name="stackedWidgetPage1">
+       <layout class="QGridLayout" name="gridLayout_3">
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QTreeWidget" name="indexTreeWidget">
+          <property name="headerHidden">
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="stackedWidgetPage2">
+       <layout class="QGridLayout" name="gridLayout_4">
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <item row="0" column="0">
+         <widget class="QTreeWidget" name="searchTreeWidget">
+          <property name="rootIsDecorated">
+           <bool>false</bool>
+          </property>
+          <property name="itemsExpandable">
+           <bool>false</bool>
+          </property>
+          <property name="headerHidden">
+           <bool>true</bool>
+          </property>
+          <column>
+           <property name="text">
+            <string>1</string>
+           </property>
+          </column>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="stackedWidgetPage3">
+       <layout class="QGridLayout" name="gridLayout_6">
+        <property name="margin">
+         <number>0</number>
+        </property>
+        <item row="1" column="0">
+         <widget class="QWidget" name="navWidget" native="true">
+          <layout class="QGridLayout" name="gridLayout_7">
+           <property name="margin">
+            <number>0</number>
+           </property>
+           <item row="2" column="2">
+            <spacer name="horizontalSpacer1">
+             <property name="orientation">
+              <enum>Qt::Horizontal</enum>
+             </property>
+             <property name="sizeHint" stdset="0">
+              <size>
+               <width>40</width>
+               <height>20</height>
+              </size>
+             </property>
+            </spacer>
+           </item>
+           <item row="2" column="0">
+            <widget class="QPushButton" name="previousPushButton">
+             <property name="toolTip">
+              <string>previous chapter</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-previous.png</normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-previous.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>16</width>
+               <height>16</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="1">
+            <widget class="QPushButton" name="nextPushButton">
+             <property name="toolTip">
+              <string>next chapter</string>
+             </property>
+             <property name="text">
+              <string/>
+             </property>
+             <property name="icon">
+              <iconset>
+               <normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-next.png</normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-next.png</iconset>
+             </property>
+             <property name="iconSize">
+              <size>
+               <width>16</width>
+               <height>16</height>
+              </size>
+             </property>
+            </widget>
+           </item>
+           <item row="2" column="3">
+            <widget class="QPushButton" name="execPushButton">
+             <property name="text">
+              <string/>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QFrame" name="webFrame">
+          <property name="sizePolicy">
+           <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+            <horstretch>0</horstretch>
+            <verstretch>0</verstretch>
+           </sizepolicy>
+          </property>
+          <property name="frameShape">
+           <enum>QFrame::StyledPanel</enum>
+          </property>
+          <property name="frameShadow">
+           <enum>QFrame::Raised</enum>
+          </property>
+          <layout class="QGridLayout" name="gridLayout_9">
+           <property name="margin">
+            <number>0</number>
+           </property>
+           <item row="0" column="0">
+            <widget class="QWebView" name="webView">
+             <property name="sizePolicy">
+              <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+               <horstretch>0</horstretch>
+               <verstretch>0</verstretch>
+              </sizepolicy>
+             </property>
+             <property name="url">
+              <url>
+               <string>about:blank</string>
+              </url>
+             </property>
+            </widget>
+           </item>
+          </layout>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>754</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuFile">
+    <property name="title">
+     <string>File</string>
+    </property>
+    <addaction name="actionClose"/>
+   </widget>
+   <widget class="QMenu" name="menuHelp">
+    <property name="title">
+     <string>Help</string>
+    </property>
+    <addaction name="actionAboutSidux"/>
+    <addaction name="actionAboutReader"/>
+   </widget>
+   <widget class="QMenu" name="menuLanguage">
+    <property name="title">
+     <string>Manual language</string>
+    </property>
+    <addaction name="actionDa"/>
+    <addaction name="actionDe"/>
+    <addaction name="actionEn"/>
+    <addaction name="actionEl"/>
+    <addaction name="actionEs"/>
+    <addaction name="actionFr"/>
+    <addaction name="actionHr"/>
+    <addaction name="actionIt"/>
+    <addaction name="actionNl"/>
+    <addaction name="actionPl"/>
+    <addaction name="actionJa"/>
+    <addaction name="actionPt"/>
+    <addaction name="actionRo"/>
+    <addaction name="actionRu"/>
+   </widget>
+   <addaction name="menuFile"/>
+   <addaction name="menuLanguage"/>
+   <addaction name="menuHelp"/>
+  </widget>
+  <action name="actionClose">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../../usr/share/sidux-manual-reader/icons/application-exit.png</normaloff>../../../../../usr/share/sidux-manual-reader/icons/application-exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>Close</string>
+   </property>
+  </action>
+  <action name="actionDa">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/da-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/da-flag.png</iconset>
+   </property>
+   <property name="text">
+    <string notr="true">Dansk</string>
+   </property>
+   <property name="whatsThis">
+    <string>da</string>
+   </property>
+  </action>
+  <action name="actionDe">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/de-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/de-flag.png</iconset>
+   </property>
+   <property name="text">
+    <string notr="true">Deutsch</string>
+   </property>
+   <property name="whatsThis">
+    <string>de</string>
+   </property>
+  </action>
+  <action name="actionEn">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/en-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/en-flag.png</iconset>
+   </property>
+   <property name="text">
+    <string notr="true">English</string>
+   </property>
+   <property name="whatsThis">
+    <string>en</string>
+   </property>
+  </action>
+  <action name="actionEl">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/el-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/el-flag.png</iconset>
+   </property>
+   <property name="text">
+    <string notr="true">Ελληνικά</string>
+   </property>
+   <property name="whatsThis">
+    <string>el</string>
+   </property>
+  </action>
+  <action name="actionEs">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/es-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/es-flag.png</iconset>
+   </property>
+   <property name="text">
+    <string notr="true">Español</string>
+   </property>
+   <property name="whatsThis">
+    <string>es</string>
+   </property>
+  </action>
+  <action name="actionFr">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/fr-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/fr-flag.png</iconset>
+   </property>
+   <property name="text">
+    <string notr="true">Français</string>
+   </property>
+   <property name="statusTip">
+    <string/>
+   </property>
+   <property name="whatsThis">
+    <string>fr</string>
+   </property>
+  </action>
+  <action name="actionHr">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/hr-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/hr-flag.png</iconset>
+   </property>
+   <property name="text">
+    <string>Hrvatski</string>
+   </property>
+   <property name="whatsThis">
+    <string>hr</string>
+   </property>
+  </action>
+  <action name="actionIt">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/it-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/it-flag.png</iconset>
+   </property>
+   <property name="text">
+    <string>Italiano</string>
+   </property>
+   <property name="whatsThis">
+    <string>it</string>
+   </property>
+  </action>
+  <action name="actionNl">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/nl-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/nl-flag.png</iconset>
+   </property>
+   <property name="text">
+    <string>Nederlands</string>
+   </property>
+   <property name="whatsThis">
+    <string>nl</string>
+   </property>
+  </action>
+  <action name="actionPl">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/pl-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/pl-flag.png</iconset>
+   </property>
+   <property name="text">
+    <string>Polski</string>
+   </property>
+   <property name="whatsThis">
+    <string>pl</string>
+   </property>
+  </action>
+  <action name="actionJa">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/ja-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/ja-flag.png</iconset>
+   </property>
+   <property name="text">
+    <string>日本語 Nihongo</string>
+   </property>
+   <property name="whatsThis">
+    <string>ja</string>
+   </property>
+  </action>
+  <action name="actionPt">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/pt-br-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/pt-br-flag.png</iconset>
+   </property>
+   <property name="text">
+    <string>Português BR</string>
+   </property>
+   <property name="whatsThis">
+    <string>pt_br</string>
+   </property>
+  </action>
+  <action name="actionRo">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/ro-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/ro-flag.png</iconset>
+   </property>
+   <property name="text">
+    <string>Română</string>
+   </property>
+   <property name="whatsThis">
+    <string>ro</string>
+   </property>
+  </action>
+  <action name="actionRu">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/ru-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/ru-flag.png</iconset>
+   </property>
+   <property name="text">
+    <string>Русский</string>
+   </property>
+   <property name="whatsThis">
+    <string>ru</string>
+   </property>
+  </action>
+  <action name="actionAboutSidux">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../../usr/share/sidux-manual-reader/icons/meeting-attending.png</normaloff>../../../../../usr/share/sidux-manual-reader/icons/meeting-attending.png</iconset>
+   </property>
+   <property name="text">
+    <string>About sidux</string>
+   </property>
+  </action>
+  <action name="actionAboutReader">
+   <property name="icon">
+    <iconset>
+     <normaloff>../../../../../usr/share/icons/hicolor/32x32/apps/sidux-manual-reader.png</normaloff>../../../../../usr/share/icons/hicolor/32x32/apps/sidux-manual-reader.png</iconset>
+   </property>
+   <property name="text">
+    <string>About the reader</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>QWebView</class>
+   <extends>QWidget</extends>
+   <header>QtWebKit/QWebView</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>actionClose</sender>
+   <signal>activated()</signal>
+   <receiver>Smr</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>searchLineEdit</sender>
+   <signal>returnPressed()</signal>
+   <receiver>Smr</receiver>
+   <slot>searchManual()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>360</x>
+     <y>49</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>348</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>indexToolButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Smr</receiver>
+   <slot>showIndex()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>26</x>
+     <y>53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>indexTreeWidget</sender>
+   <signal>itemClicked(QTreeWidgetItem*,int)</signal>
+   <receiver>Smr</receiver>
+   <slot>showChapter0(QTreeWidgetItem*,int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>317</x>
+     <y>353</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>searchTreeWidget</sender>
+   <signal>itemClicked(QTreeWidgetItem*,int)</signal>
+   <receiver>Smr</receiver>
+   <slot>showChapter0(QTreeWidgetItem*,int)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>317</x>
+     <y>353</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>nextPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Smr</receiver>
+   <slot>next()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>143</x>
+     <y>551</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>previousPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Smr</receiver>
+   <slot>previous()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>103</x>
+     <y>551</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>backToolButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Smr</receiver>
+   <slot>back()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>83</x>
+     <y>53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>backToolButton</sender>
+   <signal>triggered(QAction*)</signal>
+   <receiver>Smr</receiver>
+   <slot>back1(QAction*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>83</x>
+     <y>53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>forwardToolButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Smr</receiver>
+   <slot>forward()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>153</x>
+     <y>53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>execPushButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Smr</receiver>
+   <slot>exec()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>53</x>
+     <y>126</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDa</sender>
+   <signal>activated()</signal>
+   <receiver>Smr</receiver>
+   <slot>toDa()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionDe</sender>
+   <signal>activated()</signal>
+   <receiver>Smr</receiver>
+   <slot>toDe()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEn</sender>
+   <signal>activated()</signal>
+   <receiver>Smr</receiver>
+   <slot>toEn()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>searchToolButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Smr</receiver>
+   <slot>searchManual()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>602</x>
+     <y>96</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>317</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>webView</sender>
+   <signal>linkClicked(QUrl)</signal>
+   <receiver>Smr</receiver>
+   <slot>showUrl(QUrl)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>377</x>
+     <y>305</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>377</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEl</sender>
+   <signal>activated()</signal>
+   <receiver>Smr</receiver>
+   <slot>toEl()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>377</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionEs</sender>
+   <signal>activated()</signal>
+   <receiver>Smr</receiver>
+   <slot>toEs()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>377</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionFr</sender>
+   <signal>activated()</signal>
+   <receiver>Smr</receiver>
+   <slot>toFr()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>377</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionHr</sender>
+   <signal>activated()</signal>
+   <receiver>Smr</receiver>
+   <slot>toHr()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>377</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionIt</sender>
+   <signal>activated()</signal>
+   <receiver>Smr</receiver>
+   <slot>toIt()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>377</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionJa</sender>
+   <signal>activated()</signal>
+   <receiver>Smr</receiver>
+   <slot>toJa()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>377</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionNl</sender>
+   <signal>activated()</signal>
+   <receiver>Smr</receiver>
+   <slot>toNl()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>377</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPl</sender>
+   <signal>activated()</signal>
+   <receiver>Smr</receiver>
+   <slot>toPl()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>377</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionPt</sender>
+   <signal>activated()</signal>
+   <receiver>Smr</receiver>
+   <slot>toPt()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>377</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRo</sender>
+   <signal>activated()</signal>
+   <receiver>Smr</receiver>
+   <slot>toRo()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>377</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionRu</sender>
+   <signal>activated()</signal>
+   <receiver>Smr</receiver>
+   <slot>toRu()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>377</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>quickstartToolButton</sender>
+   <signal>clicked()</signal>
+   <receiver>Smr</receiver>
+   <slot>quickstart()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>92</x>
+     <y>53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>376</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAboutSidux</sender>
+   <signal>activated()</signal>
+   <receiver>Smr</receiver>
+   <slot>aboutSidux()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>376</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>actionAboutReader</sender>
+   <signal>activated()</signal>
+   <receiver>Smr</receiver>
+   <slot>aboutReader()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>376</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>forwardToolButton</sender>
+   <signal>triggered(QAction*)</signal>
+   <receiver>Smr</receiver>
+   <slot>forward1(QAction*)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>233</x>
+     <y>53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>376</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>showChapter0(QTreeWidgetItem*,int)</slot>
+  <slot>searchManual()</slot>
+  <slot>showSearch()</slot>
+  <slot>loadManual(QString)</slot>
+  <slot>showUrl(QUrl)</slot>
+  <slot>back()</slot>
+  <slot>previous()</slot>
+  <slot>next()</slot>
+  <slot>exec()</slot>
+  <slot>showIndex()</slot>
+  <slot>back1(QAction*)</slot>
+  <slot>forward()</slot>
+  <slot>toDe()</slot>
+  <slot>toEn()</slot>
+  <slot>toDa()</slot>
+  <slot>toEl()</slot>
+  <slot>toEs()</slot>
+  <slot>toFr()</slot>
+  <slot>toHr()</slot>
+  <slot>toIt()</slot>
+  <slot>toNl()</slot>
+  <slot>toPl()</slot>
+  <slot>toJa()</slot>
+  <slot>toPt()</slot>
+  <slot>toRo()</slot>
+  <slot>toRu()</slot>
+  <slot>quickstart()</slot>
+  <slot>aboutSidux()</slot>
+  <slot>aboutReader()</slot>
+  <slot>forward1(QAction*)</slot>
+ </slots>
+</ui>
