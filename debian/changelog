@@ -3,5 +3,6 @@ sidux-manual-reader (0.1.0) unstable; urgency=low
   [ Fabian Wuertz ]
   * Initial release.
   * Language change problem solved
+  * Search mode to quickSearch
 
- -- Fabian Wuertz <xadras@sidux.com>  Sat, 08 Aug 2009 14:35:38 +0200
+ -- Fabian Wuertz <xadras@sidux.com>  Sat, 08 Aug 2009 14:40:54 +0200

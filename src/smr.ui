@@ -26,18 +26,11 @@
        </property>
        <item row="0" column="0">
         <widget class="QLineEdit" name="searchLineEdit">
+         <property name="inputMask">
+          <string/>
+         </property>
          <property name="dragEnabled">
           <bool>false</bool>
-         </property>
-        </widget>
-       </item>
-       <item row="0" column="1">
-        <widget class="QToolButton" name="searchToolButton">
-         <property name="text">
-          <string>Search</string>
-         </property>
-         <property name="popupMode">
-          <enum>QToolButton::DelayedPopup</enum>
          </property>
         </widget>
        </item>
@@ -614,22 +607,6 @@
    </hints>
   </connection>
   <connection>
-   <sender>searchLineEdit</sender>
-   <signal>returnPressed()</signal>
-   <receiver>Smr</receiver>
-   <slot>searchManual()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>360</x>
-     <y>49</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>399</x>
-     <y>348</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
    <sender>indexToolButton</sender>
    <signal>clicked()</signal>
    <receiver>Smr</receiver>
@@ -814,22 +791,6 @@
     <hint type="sourcelabel">
      <x>-1</x>
      <y>-1</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>317</x>
-     <y>299</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>searchToolButton</sender>
-   <signal>clicked()</signal>
-   <receiver>Smr</receiver>
-   <slot>searchManual()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>602</x>
-     <y>96</y>
     </hint>
     <hint type="destinationlabel">
      <x>317</x>
@@ -1086,6 +1047,22 @@
     <hint type="sourcelabel">
      <x>233</x>
      <y>53</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>376</x>
+     <y>299</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>searchLineEdit</sender>
+   <signal>textChanged(QString)</signal>
+   <receiver>Smr</receiver>
+   <slot>searchManual()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>343</x>
+     <y>88</y>
     </hint>
     <hint type="destinationlabel">
      <x>376</x>
