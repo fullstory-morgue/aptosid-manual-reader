@@ -2,18 +2,21 @@ Source: sidux-manual-reader
 Section: admin
 Priority: extra
 Maintainer: Fabian Wuertz <xadras@sidux.com>
-Uploaders: Stefan Lippers-Hollmann <s.l-h@gmx.de>, Ferdinand Thommes <devil@sidux.com>
+Uploaders: Stefan Lippers-Hollmann <s.l-h@gmx.de>,
+ Ferdinand Thommes <devil@sidux.com>
 Build-Depends: cdbs,
-               debhelper (>= 7),
-               libqt4-dev,
-               qt4-qmake,
+ debhelper (>= 7),
+ libqt4-dev,
+ qt4-qmake
 Standards-Version: 3.8.0
+Vcs-Svn: svn://svn.berlios.de/fullstory/sidux-irc/trunk
+Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/sidux-irc/trunk/
 
 Package: sidux-manual-reader
 Architecture: any
 Depends: ${shlibs:Depends},
-         ${misc:Depends},
-         menu,
-         sidux-apt-qt4
+ ${misc:Depends},
+ menu,
+ sidux-apt-qt4
 Description: sidux manual reader
   A reader for the sidux manual.

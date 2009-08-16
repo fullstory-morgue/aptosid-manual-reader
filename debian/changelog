@@ -5,4 +5,9 @@ sidux-manual-reader (0.1.0) unstable; urgency=low
   * Language change problem solved
   * Search mode to quickSearch
 
- -- Fabian Wuertz <xadras@sidux.com>  Sat, 08 Aug 2009 14:40:54 +0200
+  [ Stefan Lippers-Hollmann ]
+  * fix sidux-manual-reader.desktop file name.
+  * add Vcs-Svn/ Vcs-Browser URLs.
+  * fix dangling comma in build-depends.
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 17 Aug 2009 01:57:52 +0200
