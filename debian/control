@@ -19,4 +19,4 @@ Depends: ${shlibs:Depends},
  menu,
  sidux-apt-qt4
 Description: sidux manual reader
-  A reader for the sidux manual.
+ A reader for the sidux manual.
