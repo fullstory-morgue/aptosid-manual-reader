@@ -11,5 +11,6 @@ sidux-manual-reader (0.1.0) unstable; urgency=low
   * fix dangling comma in build-depends.
   * drop no longer required encoding information for desktop files.
   * remove spurious spaces in front of the long description.
+  * bump standards version to 3.8.3, no changes necessary.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 17 Aug 2009 02:08:37 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 17 Aug 2009 02:14:15 +0200
