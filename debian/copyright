@@ -8,6 +8,18 @@ Upstream Author: Fabian Wuertz <xadras@sidux.com>
 Copyright:
 	© 2007-2008 Fabian Wuertz <xadras@sidux.com>
 
+
+The following icons are from gnome-icon-theme
+Copyright © 2005 Gnome Artwork Team
+	icons/application-exit.svg
+	icons/go-home.svg
+	icons/go-previous.svg
+	icons/software-update-urgent.svg
+	icons/dialog-question.svg
+	icons/go-next.svg
+	icons/preferences-desktop-accessibility.svg
+
+
 License:
 	This program is free software; you can redistribute it and/or modify
 	it under the terms of the GNU General Public License version 2 as

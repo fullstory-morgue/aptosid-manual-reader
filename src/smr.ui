@@ -53,7 +53,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-previous.png</normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-previous.png</iconset>
+           <normaloff>/usr/share/sidux-manual-reader/icons/go-previous.svg</normaloff>/usr/share/sidux-manual-reader/icons/go-previous.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -79,7 +79,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-home.png</normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-home.png</iconset>
+           <normaloff>/usr/share/sidux-manual-reader/icons/go-home.svg</normaloff>/usr/share/sidux-manual-reader/icons/go-home.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -112,7 +112,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-next.png</normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-next.png</iconset>
+           <normaloff>/usr/share/sidux-manual-reader/icons/go-next.svg</normaloff>/usr/share/sidux-manual-reader/icons/go-next.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -135,7 +135,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../../../usr/share/sidux-manual-reader/icons/user-away-extended.png</normaloff>../../../../../usr/share/sidux-manual-reader/icons/user-away-extended.png</iconset>
+           <normaloff>/usr/share/sidux-manual-reader/icons/preferences-desktop-accessibility.svg</normaloff>/usr/share/sidux-manual-reader/icons/preferences-desktop-accessibility.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -237,7 +237,7 @@
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-previous.png</normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-previous.png</iconset>
+               <normaloff>/usr/share/sidux-manual-reader/icons/go-previous.svg</normaloff>/usr/share/sidux-manual-reader/icons/go-previous.svg</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -257,7 +257,7 @@
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-next.png</normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-next.png</iconset>
+               <normaloff>/usr/share/sidux-manual-reader/icons/go-next.svg</normaloff>/usr/share/sidux-manual-reader/icons/go-next.svg</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -367,7 +367,7 @@
   <action name="actionClose">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual-reader/icons/application-exit.png</normaloff>../../../../../usr/share/sidux-manual-reader/icons/application-exit.png</iconset>
+     <normaloff>/usr/share/sidux-manual-reader/icons/application-exit.svg</normaloff>/usr/share/sidux-manual-reader/icons/application-exit.svg</iconset>
    </property>
    <property name="text">
     <string>Close</string>
@@ -379,7 +379,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/da-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/da-flag.png</iconset>
+     <normaloff>/usr/share/sidux-manual/lib/flags/da-flag.png</normaloff>/usr/share/sidux-manual/lib/flags/da-flag.png</iconset>
    </property>
    <property name="text">
     <string notr="true">Dansk</string>
@@ -394,7 +394,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/de-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/de-flag.png</iconset>
+     <normaloff>/usr/share/sidux-manual/lib/flags/de-flag.png</normaloff>/usr/share/sidux-manual/lib/flags/de-flag.png</iconset>
    </property>
    <property name="text">
     <string notr="true">Deutsch</string>
@@ -409,7 +409,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/en-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/en-flag.png</iconset>
+     <normaloff>/usr/share/sidux-manual/lib/flags/en-flag.png</normaloff>/usr/share/sidux-manual/lib/flags/en-flag.png</iconset>
    </property>
    <property name="text">
     <string notr="true">English</string>
@@ -424,7 +424,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/el-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/el-flag.png</iconset>
+     <normaloff>/usr/share/sidux-manual/lib/flags/el-flag.png</normaloff>/usr/share/sidux-manual/lib/flags/el-flag.png</iconset>
    </property>
    <property name="text">
     <string notr="true">Ελληνικά</string>
@@ -439,7 +439,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/es-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/es-flag.png</iconset>
+     <normaloff>/usr/share/sidux-manual/lib/flags/es-flag.png</normaloff>/usr/share/sidux-manual/lib/flags/es-flag.png</iconset>
    </property>
    <property name="text">
     <string notr="true">Español</string>
@@ -454,7 +454,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/fr-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/fr-flag.png</iconset>
+     <normaloff>/usr/share/sidux-manual/lib/flags/fr-flag.png</normaloff>/usr/share/sidux-manual/lib/flags/fr-flag.png</iconset>
    </property>
    <property name="text">
     <string notr="true">Français</string>
@@ -469,7 +469,7 @@
   <action name="actionHr">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/hr-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/hr-flag.png</iconset>
+     <normaloff>/usr/share/sidux-manual/lib/flags/hr-flag.png</normaloff>/usr/share/sidux-manual/lib/flags/hr-flag.png</iconset>
    </property>
    <property name="text">
     <string>Hrvatski</string>
@@ -481,7 +481,7 @@
   <action name="actionIt">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/it-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/it-flag.png</iconset>
+     <normaloff>/usr/share/sidux-manual/lib/flags/it-flag.png</normaloff>/usr/share/sidux-manual/lib/flags/it-flag.png</iconset>
    </property>
    <property name="text">
     <string>Italiano</string>
@@ -493,7 +493,7 @@
   <action name="actionNl">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/nl-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/nl-flag.png</iconset>
+     <normaloff>/usr/share/sidux-manual/lib/flags/nl-flag.png</normaloff>/usr/share/sidux-manual/lib/flags/nl-flag.png</iconset>
    </property>
    <property name="text">
     <string>Nederlands</string>
@@ -505,7 +505,7 @@
   <action name="actionPl">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/pl-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/pl-flag.png</iconset>
+     <normaloff>/usr/share/sidux-manual/lib/flags/pl-flag.png</normaloff>/usr/share/sidux-manual/lib/flags/pl-flag.png</iconset>
    </property>
    <property name="text">
     <string>Polski</string>
@@ -517,7 +517,7 @@
   <action name="actionJa">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/ja-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/ja-flag.png</iconset>
+     <normaloff>/usr/share/sidux-manual/lib/flags/ja-flag.png</normaloff>/usr/share/sidux-manual/lib/flags/ja-flag.png</iconset>
    </property>
    <property name="text">
     <string>日本語 Nihongo</string>
@@ -529,7 +529,7 @@
   <action name="actionPt">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/pt-br-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/pt-br-flag.png</iconset>
+     <normaloff>/usr/share/sidux-manual/lib/flags/pt-br-flag.png</normaloff>/usr/share/sidux-manual/lib/flags/pt-br-flag.png</iconset>
    </property>
    <property name="text">
     <string>Português BR</string>
@@ -541,7 +541,7 @@
   <action name="actionRo">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/ro-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/ro-flag.png</iconset>
+     <normaloff>/usr/share/sidux-manual/lib/flags/ro-flag.png</normaloff>/usr/share/sidux-manual/lib/flags/ro-flag.png</iconset>
    </property>
    <property name="text">
     <string>Română</string>
@@ -553,7 +553,7 @@
   <action name="actionRu">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/ru-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/ru-flag.png</iconset>
+     <normaloff>/usr/share/sidux-manual/lib/flags/ru-flag.png</normaloff>/usr/share/sidux-manual/lib/flags/ru-flag.png</iconset>
    </property>
    <property name="text">
     <string>Русский</string>
@@ -565,7 +565,7 @@
   <action name="actionAboutSidux">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual-reader/icons/meeting-attending.png</normaloff>../../../../../usr/share/sidux-manual-reader/icons/meeting-attending.png</iconset>
+     <normaloff>/usr/share/sidux-manual-reader/icons/dialog-question.svg</normaloff>/usr/share/sidux-manual-reader/icons/dialog-question.svg</iconset>
    </property>
    <property name="text">
     <string>About sidux</string>
@@ -574,7 +574,7 @@
   <action name="actionAboutReader">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/icons/hicolor/32x32/apps/sidux-manual-reader.png</normaloff>../../../../../usr/share/icons/hicolor/32x32/apps/sidux-manual-reader.png</iconset>
+     <normaloff>/usr/share/icons/hicolor/32x32/apps/sidux-manual.png</normaloff>/usr/share/icons/hicolor/32x32/apps/sidux-manual.png</iconset>
    </property>
    <property name="text">
     <string>About the reader</string>

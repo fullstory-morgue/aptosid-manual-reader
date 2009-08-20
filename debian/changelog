@@ -13,4 +13,9 @@ sidux-manual-reader (0.1.0) unstable; urgency=low
   * remove spurious spaces in front of the long description.
   * bump standards version to 3.8.3, no changes necessary.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Mon, 17 Aug 2009 02:14:15 +0200
+  [ Fabian Wuertz ]
+  * copyright informations updated
+  * sidux-manual-common as dependency
+  * svg icons added
+
+ -- Fabian Wuertz <xadras@sidux.com>  Thu, 20 Aug 2009 10:38:27 +0200

@@ -71,6 +71,7 @@ class Smr : public QMainWindow, Ui::Smr {
 		QStringList backHistory, forwardHistory, h2List, h2IdList;
 		QString lang;
 		QMenu *backMenu, *forwardMenu;
+		bool noHistory;
 
 };
 #endif

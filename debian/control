@@ -17,6 +17,7 @@ Architecture: any
 Depends: ${shlibs:Depends},
  ${misc:Depends},
  menu,
- sidux-apt-qt4
+ sidux-apt-qt4,
+ sidux-manual-common 
 Description: sidux manual reader
  A reader for the sidux manual.

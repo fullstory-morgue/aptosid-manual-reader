@@ -126,8 +126,6 @@ void Smr::showChapter0(QTreeWidgetItem* item, int i) {
 			item->setExpanded(TRUE);
 		return;
 	}
-	//if( currentItem->columnCount() > 1)
-	//	backHistory.prepend( currentItem->text(1) );
 	forwardHistory.clear();
 	showChapter(item->text(1));
 	
@@ -136,6 +134,8 @@ void Smr::showChapter0(QTreeWidgetItem* item, int i) {
 
 void Smr::showChapter(QString id) {
   
+  
+	noHistory = false;
   
 	if( chaptersTreeWidget->findItems(id, Qt::MatchExactly, 1).count() < 1 ) {
 		webView->setHtml(tr("Sorry this page doesn't exist!")+id);
@@ -149,8 +149,8 @@ void Smr::showChapter(QString id) {
 	QString content = chaptersTreeWidget->findItems(id, Qt::MatchExactly, 1).first()->text(2);
 	content.prepend("<head><link href=\"/usr/share/sidux-manual-reader/css/content.css\" rel=\"stylesheet\" type=\"text/css\" /></head>");
 	// create alters
-	content.replace( QRegExp("<p class=\"highlight-2\">([^<]*)</p>"), "<table class=alert><tr><td class=noBorder><img src=\"/usr/share/sidux-manual-reader/icons/warning.png\"></td><td class=noBorder>\\1</td></tr></table>");
-	content.replace( QRegExp("<div class=\"highlight-2\">([^<]*)</div>"), "<table class=alert><tr><td class=noBorder><img src=\"/usr/share/sidux-manual-reader/icons/warning.png\"></td><td class=noBorder>\\1</td></tr></table>");
+	content.replace( QRegExp("<p class=\"highlight-2\">([^<]*)</p>"), "<table class=alert><tr><td class=noBorder><img src=\"/usr/share/sidux-manual-reader/icons/software-update-urgent.svg\"></td><td class=noBorder>\\1</td></tr></table>");
+	content.replace( QRegExp("<div class=\"highlight-2\">([^<]*)</div>"), "<table class=alert><tr><td class=noBorder><img src=\"/usr/share/sidux-manual-reader/icons/software-update-urgent.svg\"></td><td class=noBorder>\\1</td></tr></table>");
 
 	
 	
@@ -354,18 +354,22 @@ void Smr::exec() {
 
 
 void Smr::quickstart() {
-	backHistory.prepend( h2IdList[currentChapter] );
+	if(!noHistory )
+		backHistory.prepend( h2IdList[currentChapter] );
 	forwardHistory.clear();
 	showChapter( "welcome-quick" );
 }
 
 void Smr::aboutSidux() {
-	backHistory.prepend( h2IdList[currentChapter] );
+  	if(!noHistory )
+		backHistory.prepend( h2IdList[currentChapter] );
 	forwardHistory.clear();
 	showChapter( "cred-team" );
 }
 
 void Smr::aboutReader() {
+    	if(!noHistory )
+		backHistory.prepend( h2IdList[currentChapter] );
 	webView->setHtml("<h2>sidux Manual Reader</h2><b>"+tr("Programmer")+":</b> Fabian Wuertz xadras@sidux.com<br><b>"+tr("License")+":</b> GPL2<br>");
 	stackedWidget->setCurrentIndex(2);
 	navWidget->hide();
@@ -500,5 +504,6 @@ void Smr::loadManual() {
 		}
 	}
 
+	noHistory = true;
 	showIndex();
 }
