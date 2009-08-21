@@ -4,6 +4,9 @@ sidux-manual-reader (0.1.0) unstable; urgency=low
   * Initial release.
   * Language change problem solved
   * Search mode to quickSearch
+  * copyright informations updated
+  * sidux-manual-common as dependency
+  * svg icons added
 
   [ Stefan Lippers-Hollmann ]
   * fix sidux-manual-reader.desktop file name.
@@ -12,10 +15,5 @@ sidux-manual-reader (0.1.0) unstable; urgency=low
   * drop no longer required encoding information for desktop files.
   * remove spurious spaces in front of the long description.
   * bump standards version to 3.8.3, no changes necessary.
-
-  [ Fabian Wuertz ]
-  * copyright informations updated
-  * sidux-manual-common as dependency
-  * svg icons added
 
  -- Fabian Wuertz <xadras@sidux.com>  Thu, 20 Aug 2009 10:38:27 +0200

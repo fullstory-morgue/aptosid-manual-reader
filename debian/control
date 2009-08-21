@@ -9,8 +9,8 @@ Build-Depends: cdbs,
  libqt4-dev,
  qt4-qmake
 Standards-Version: 3.8.3
-Vcs-Svn: svn://svn.berlios.de/fullstory/sidux-irc/trunk
-Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/sidux-irc/trunk/
+Vcs-Svn: svn://svn.berlios.de/fullstory/sidux-manual-reader/trunk
+Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/sidux-manual-reader/trunk/
 
 Package: sidux-manual-reader
 Architecture: any
