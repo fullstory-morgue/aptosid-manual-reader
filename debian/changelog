@@ -1,11 +1,7 @@
-sidux-manual-reader (0.1.1) UNRELEASED; urgency=low
+sidux-manual-reader (0.1.1) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Fabian Wuertz ]
   * Start value for the search line
-  * </h3 problem solved
+  * </h3> problem solved
 
  -- Fabian Wuertz <xadras@sidux.com>  Sun, 23 Aug 2009 10:55:15 +0200
 
