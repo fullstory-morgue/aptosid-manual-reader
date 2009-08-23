@@ -1,8 +1,13 @@
 sidux-manual-reader (0.1.1) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Fri, 21 Aug 2009 16:07:23 +0200
+  [ Fabian Wuertz ]
+  * Start value for the search line
+  * </h3 problem solved
+
+ -- Fabian Wuertz <xadras@sidux.com>  Sun, 23 Aug 2009 10:55:15 +0200
 
 sidux-manual-reader (0.1.0) unstable; urgency=low
 

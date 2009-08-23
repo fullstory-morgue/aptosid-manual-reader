@@ -37,6 +37,7 @@ class Smr : public QMainWindow, Ui::Smr {
 		void showUrl(QUrl);
 		void searchManual();
 		void showSearch();
+		void clearSearch();
 		void showIndex();
 		void back();
 		void back1(QAction*);
@@ -71,7 +72,7 @@ class Smr : public QMainWindow, Ui::Smr {
 		QStringList backHistory, forwardHistory, h2List, h2IdList;
 		QString lang;
 		QMenu *backMenu, *forwardMenu;
-		bool noHistory;
+		bool noHistory, start;
 
 };
 #endif

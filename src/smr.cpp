@@ -44,6 +44,7 @@ Smr::Smr(QStringList args, QMainWindow* parent, Qt::WFlags flags): QMainWindow (
 	// argument
 	if(args.count() > 1 )
 		showChapter(args[1]);
+	start = true;
 }
 
 
@@ -58,6 +59,9 @@ void Smr::showSearch() {
 
 void Smr::searchManual() {
 
+	if(searchLineEdit->text().isEmpty() )
+		return;
+  
 	QStringList searchList = searchLineEdit->text().split(" ");
 	QTreeWidget *tmpTreeWidget1 = new QTreeWidget;
 	tmpTreeWidget1->setColumnCount(3);
@@ -102,6 +106,14 @@ void Smr::searchManual() {
 		++it2;
 	}
 	stackedWidget->setCurrentIndex(1);
+}
+
+
+void Smr::clearSearch() {
+	if(start) {
+		searchLineEdit->setText("");
+		start = false;
+	}
 }
 
 //------------------------------------------------------------------------------
@@ -497,6 +509,7 @@ void Smr::loadManual() {
 
 			if( !id.contains ("W3C//DTD") and id != "table-contents" ) {
 				QTreeWidgetItem *item = new QTreeWidgetItem(chaptersTreeWidget);
+				title.replace("</h3", "");
 				item->setText( 0,  title );
 				item->setText( 1,  id );
 				item->setText( 2,  content );
