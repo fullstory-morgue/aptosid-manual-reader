@@ -14,6 +14,7 @@ License GPL2
 #include "QMessageBox"
 #include "QWebFrame"
 #include "QDesktopServices"
+#include <QSettings>
 
 Smr::Smr(QStringList args, QMainWindow* parent, Qt::WFlags flags): QMainWindow (parent, flags) {
 
@@ -32,7 +33,10 @@ Smr::Smr(QStringList args, QMainWindow* parent, Qt::WFlags flags): QMainWindow (
 	webView->page()->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);
 
 	// get languages
-        lang = QLocale::system().name().left(2);
+	QSettings settings("sidux-manual-reader");
+	lang = settings.value("language").toString ();
+	if(lang.isEmpty())
+		lang = QLocale::system().name().left(2);
 	QStringList languages;
 	languages << "da" << "de" << "en" << "el" << "es" << "fr" << "hr" << "it" << "nl" << "pl" << "ja" <<  "pt" << "ro" << "ru";
 	if( lang == "pt")
@@ -421,6 +425,8 @@ void Smr::loadManual() {
 		return;
 	}
 
+	QSettings settings("sidux-manual-reader");
+	settings.setValue("language", lang);
 
 	indexTreeWidget->clear();
 	chaptersTreeWidget->clear();
