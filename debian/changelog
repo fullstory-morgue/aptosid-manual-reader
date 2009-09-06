@@ -1,9 +1,5 @@
-sidux-manual-reader (0.1.2) UNRELEASED; urgency=low
+sidux-manual-reader (0.1.2) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Fabian Wuertz ]
   * QSettings added 
 
  -- Fabian Wuertz <xadras@sidux.com>  Tue, 25 Aug 2009 11:03:04 +0200
