@@ -115,7 +115,7 @@ void Smr::searchManual() {
 
 void Smr::clearSearch() {
 	if(start) {
-		searchLineEdit->setText("");
+		searchLineEdit->clear();
 		start = false;
 	}
 }
@@ -180,12 +180,10 @@ void Smr::showChapter(QString id) {
 
 
 
- 	webView->setHtml(content);	
+ 	webView->setHtml(content);
 
 	
-
-	
-        // backMenu
+	// backMenu
 	backMenu->clear();
 	int i = 0;
 	foreach(QString e, backHistory ) {
@@ -213,10 +211,7 @@ void Smr::showChapter(QString id) {
 
 
 
-
-
-
-        // show previous/next buttons
+	// show previous/next buttons
 	currentChapter = h2IdList.indexOf(id);
 	if( currentChapter > 0 ) {
 		previousPushButton->setText( h2List[currentChapter-1] );
@@ -224,7 +219,7 @@ void Smr::showChapter(QString id) {
 	}
 	else
 		previousPushButton->hide();
-	if(currentChapter < h2List.count() ) {
+	if(currentChapter+1 < h2List.count() ) {
 		nextPushButton->setText( h2List[currentChapter+1] );
 		nextPushButton->show();
 	}
@@ -232,7 +227,7 @@ void Smr::showChapter(QString id) {
 		nextPushButton->hide();
 
 
-        // show exec buttons
+	// show exec buttons
 	if( id == "siduxcc") {
 		execPushButton->setText( tr("start")+" "+tr("sidux Control Center") );
 		execPushButton->setIcon( QPixmap( "/usr/share/icons/hicolor/16x16/apps/siduxcc.png") );
