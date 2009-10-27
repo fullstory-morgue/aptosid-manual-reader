@@ -9,6 +9,8 @@ TEMPLATE = app
 CONFIG += qt
 FORMS += src/smr.ui
 
+TRANSLATIONS = translations/sidux-manual-reader_de.ts
+
 target.path = /usr/bin
 icontarget.path = /usr/share/icons/hicolor/32x32/apps/
 icontarget.files = src/sidux-manual-reader.png
