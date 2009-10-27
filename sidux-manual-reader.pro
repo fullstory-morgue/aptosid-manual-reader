@@ -20,5 +20,7 @@ shortcuttarget.path = /usr/share/applications/sidux
 shortcuttarget.files = src/sidux-manual-reader.desktop
 csstarget.path = /usr/share/sidux-manual-reader/css/
 csstarget.files = src/content.css
+langtarget.path = /usr/share/sidux-manual-reader/translations/
+langtarget.files = translations/sidux-manual-reader_de.qm
 
-INSTALLS += target icontarget iconstarget shortcuttarget csstarget
+INSTALLS += target icontarget iconstarget shortcuttarget csstarget langtarget
