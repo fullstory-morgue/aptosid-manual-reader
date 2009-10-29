@@ -1,11 +1,6 @@
-sidux-manual-reader (0.2) UNRELEASED; urgency=low
+sidux-manual-reader (0.2.0) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Fabian Wuertz ]
   * German translation added
-  * German translation updated
 
  -- Fabian Wuertz <xadras@sidux.com>  Wed, 28 Oct 2009 00:02:25 +0100
 
