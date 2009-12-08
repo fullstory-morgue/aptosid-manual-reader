@@ -1,8 +1,8 @@
-sidux-manual-reader (0.2.1) UNRELEASED; urgency=low
+sidux-manual-reader (0.2.1) unstable; urgency=low
 
-  * NOT RELEASED YET
+  * rebuild with gcc-4.4.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 29 Oct 2009 02:43:30 +0100
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Tue, 08 Dec 2009 19:12:29 +0100
 
 sidux-manual-reader (0.2.0) unstable; urgency=low
 
