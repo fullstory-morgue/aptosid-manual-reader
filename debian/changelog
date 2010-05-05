@@ -3,8 +3,9 @@ sidux-manual-reader (0.2.2) unstable; urgency=low
   * switch to compact dh7 rules.
   * Build-Conflicts: libqt3-dev
   * bump standards version to 3.8.4, no changes necessary.
+  * add missing compat level, use compat level 7.
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 05 May 2010 03:06:21 +0200
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 05 May 2010 03:07:43 +0200
 
 sidux-manual-reader (0.2.1) unstable; urgency=low
 
