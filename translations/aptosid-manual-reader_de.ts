@@ -17,8 +17,8 @@
     </message>
     <message>
         <location filename="../src/smr.cpp" line="232"/>
-        <source>sidux Control Center</source>
-        <translation>sidux Kontrollzentrum</translation>
+        <source>aptosid Control Center</source>
+        <translation>aptosid Kontrollzentrum</translation>
     </message>
     <message>
         <location filename="../src/smr.cpp" line="237"/>
@@ -52,8 +52,8 @@
     </message>
     <message>
         <location filename="../src/smr.ui" line="14"/>
-        <source>sidux Manual Reader</source>
-        <translation>sidux Manual Reader</translation>
+        <source>aptosid Manual Reader</source>
+        <translation>aptosid Manual Reader</translation>
     </message>
     <message>
         <location filename="../src/smr.ui" line="36"/>
@@ -234,8 +234,8 @@
     </message>
     <message>
         <location filename="../src/smr.ui" line="580"/>
-        <source>About sidux</source>
-        <translation>Über sidux</translation>
+        <source>About aptosid</source>
+        <translation>Über aptosid</translation>
     </message>
     <message>
         <location filename="../src/smr.ui" line="589"/>

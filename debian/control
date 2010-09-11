@@ -1,23 +1,23 @@
-Source: sidux-manual-reader
+Source: aptosid-manual-reader
 Section: admin
 Priority: extra
-Maintainer: Fabian Wuertz <xadras@sidux.com>
+Maintainer: Fabian Wuertz <xadras@aptosid.com>
 Uploaders: Stefan Lippers-Hollmann <s.l-h@gmx.de>,
- Ferdinand Thommes <devil@sidux.com>
+ Ferdinand Thommes <devil@aptosid.com>
 Build-Depends: debhelper (>= 7.9.3),
  libqt4-dev,
  qt4-qmake
 Build-Conflicts: libqt3-dev
 Standards-Version: 3.9.1
-Vcs-Svn: svn://svn.berlios.de/fullstory/sidux-manual-reader/trunk
-Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/sidux-manual-reader/trunk/
+Vcs-Svn: svn://svn.berlios.de/fullstory/aptosid-manual-reader/trunk
+Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/aptosid-manual-reader/trunk/
 
-Package: sidux-manual-reader
+Package: aptosid-manual-reader
 Architecture: any
 Depends: ${shlibs:Depends},
  ${misc:Depends},
  menu,
- sidux-apt-qt4,
- sidux-manual-common 
-Description: sidux manual reader
- A reader for the sidux manual.
+ aptosid-apt-qt4,
+ aptosid-manual-common 
+Description: aptosid manual reader
+ A reader for the aptosid manual.

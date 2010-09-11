@@ -6,11 +6,11 @@
  </data>
  <data>
   <variable>RunConfiguration0-ProFile</variable>
-  <value type="QString" >/media/sda4/home/wuertz/dev/@/sidux-manual-reader/sidux-manual-reader.pro</value>
+  <value type="QString" >/media/sda4/home/wuertz/dev/@/aptosid-manual-reader/aptosid-manual-reader.pro</value>
  </data>
  <data>
   <variable>RunConfiguration0-RunConfiguration.name</variable>
-  <value type="QString" >sidux-manual-reader</value>
+  <value type="QString" >aptosid-manual-reader</value>
  </data>
  <data>
   <variable>RunConfiguration0-UserSetName</variable>
@@ -34,7 +34,7 @@
    <value key="ProjectExplorer.BuildConfiguration.DisplayName" type="QString" >Debug</value>
    <value key="QtVersionId" type="int" >0</value>
    <value key="addQDumper" type="" ></value>
-   <value key="buildDirectory" type="QString" >/media/sda4/home/wuertz/dev/@/sidux-manual-reader</value>
+   <value key="buildDirectory" type="QString" >/media/sda4/home/wuertz/dev/@/aptosid-manual-reader</value>
   </valuemap>
  </data>
  <data>
@@ -67,7 +67,7 @@
     <value type="QString" >PATH=/usr/bin:/home/wuertz/bin:/usr/local/bin:/usr/bin:/bin:/usr/games</value>
     <value type="QString" >PWD=/media/sda4/home/wuertz</value>
     <value type="QString" >QTDIR=/usr</value>
-    <value type="QString" >SESSION_MANAGER=local/siduxbox:/tmp/.ICE-unix/3698</value>
+    <value type="QString" >SESSION_MANAGER=local/aptosidbox:/tmp/.ICE-unix/3698</value>
     <value type="QString" >SHELL=/bin/bash</value>
     <value type="QString" >SHLVL=2</value>
     <value type="QString" >SSH_AGENT_PID=3683</value>
@@ -80,7 +80,7 @@
     <value type="QString" >_=/usr/bin/xfce4-session</value>
    </valuelist>
    <valuelist key="abstractProcess.arguments" type="QVariantList" >
-    <value type="QString" >/media/sda4/home/wuertz/dev/@/sidux-manual-reader/sidux-manual-reader.pro</value>
+    <value type="QString" >/media/sda4/home/wuertz/dev/@/aptosid-manual-reader/aptosid-manual-reader.pro</value>
     <value type="QString" >-spec</value>
     <value type="QString" >/usr/share/qt4/mkspecs/linux-g++</value>
     <value type="QString" >-r</value>
@@ -89,7 +89,7 @@
    </valuelist>
    <value key="abstractProcess.command" type="QString" >/usr/bin/qmake-qt4</value>
    <value key="abstractProcess.enabled" type="bool" >false</value>
-   <value key="abstractProcess.workingDirectory" type="QString" >/media/sda4/home/wuertz/dev/@/sidux-manual-reader</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >/media/sda4/home/wuertz/dev/@/aptosid-manual-reader</value>
    <value key="buildConfiguration" type="int" >10</value>
   </valuemap>
  </data>
@@ -109,7 +109,7 @@
     <value type="QString" >PATH=/usr/bin:/home/wuertz/bin:/usr/local/bin:/usr/bin:/bin:/usr/games</value>
     <value type="QString" >PWD=/media/sda4/home/wuertz</value>
     <value type="QString" >QTDIR=/usr</value>
-    <value type="QString" >SESSION_MANAGER=local/siduxbox:/tmp/.ICE-unix/3698</value>
+    <value type="QString" >SESSION_MANAGER=local/aptosidbox:/tmp/.ICE-unix/3698</value>
     <value type="QString" >SHELL=/bin/bash</value>
     <value type="QString" >SHLVL=2</value>
     <value type="QString" >SSH_AGENT_PID=3683</value>
@@ -127,7 +127,7 @@
    </valuelist>
    <value key="abstractProcess.command" type="QString" >/usr/bin/make</value>
    <value key="abstractProcess.enabled" type="bool" >true</value>
-   <value key="abstractProcess.workingDirectory" type="QString" >/media/sda4/home/wuertz/dev/@/sidux-manual-reader</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >/media/sda4/home/wuertz/dev/@/aptosid-manual-reader</value>
    <valuelist key="makeargs" type="QVariantList" >
     <value type="QString" >debug</value>
    </valuelist>
@@ -155,7 +155,7 @@
     <value type="QString" >PATH=/usr/bin:/home/wuertz/bin:/usr/local/bin:/usr/bin:/bin:/usr/games</value>
     <value type="QString" >PWD=/media/sda4/home/wuertz</value>
     <value type="QString" >QTDIR=/usr</value>
-    <value type="QString" >SESSION_MANAGER=local/siduxbox:/tmp/.ICE-unix/3698</value>
+    <value type="QString" >SESSION_MANAGER=local/aptosidbox:/tmp/.ICE-unix/3698</value>
     <value type="QString" >SHELL=/bin/bash</value>
     <value type="QString" >SHLVL=2</value>
     <value type="QString" >SSH_AGENT_PID=3683</value>
@@ -173,7 +173,7 @@
    </valuelist>
    <value key="abstractProcess.command" type="QString" >/usr/bin/make</value>
    <value key="abstractProcess.enabled" type="bool" >true</value>
-   <value key="abstractProcess.workingDirectory" type="QString" >/media/sda4/home/wuertz/dev/@/sidux-manual-reader</value>
+   <value key="abstractProcess.workingDirectory" type="QString" >/media/sda4/home/wuertz/dev/@/aptosid-manual-reader</value>
   </valuemap>
  </data>
  <data>

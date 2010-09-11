@@ -1,5 +1,5 @@
 /*
-sidux Manual Reader
+aptosid Manual Reader
 Copyright (C) 2009 Fabian Wuertz  
 License GPL2
 */
@@ -47,7 +47,7 @@ class Smr : public QMainWindow, Ui::Smr {
 		void exec();
 		void previous();
 		void quickstart();
-		void aboutSidux();
+		void aboutaptosid();
 		void aboutReader();
 		void toDa();
 		void toDe();

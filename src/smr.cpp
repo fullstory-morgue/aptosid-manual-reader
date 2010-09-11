@@ -1,5 +1,5 @@
 /*
-sidux Manual Reader
+aptosid Manual Reader
 Copyright (C) 2009 Fabian Wuertz  
 License GPL2
 */
@@ -18,7 +18,7 @@ License GPL2
 
 Smr::Smr(QStringList args, QMainWindow* parent, Qt::WFlags flags): QMainWindow (parent, flags) {
 
-	manpath = "/usr/share/sidux-manual/";
+	manpath = "/usr/share/aptosid-manual/";
 
 
 
@@ -33,7 +33,7 @@ Smr::Smr(QStringList args, QMainWindow* parent, Qt::WFlags flags): QMainWindow (
 	webView->page()->setLinkDelegationPolicy(QWebPage::DelegateAllLinks);
 
 	// get languages
-	QSettings settings("sidux-manual-reader");
+	QSettings settings("aptosid-manual-reader");
 	lang = settings.value("language").toString ();
 	if(lang.isEmpty())
 		lang = QLocale::system().name().left(2);
@@ -163,10 +163,10 @@ void Smr::showChapter(QString id) {
 
 
 	QString content = chaptersTreeWidget->findItems(id, Qt::MatchExactly, 1).first()->text(2);
-	content.prepend("<head><link href=\"/usr/share/sidux-manual-reader/css/content.css\" rel=\"stylesheet\" type=\"text/css\" /></head>");
+	content.prepend("<head><link href=\"/usr/share/aptosid-manual-reader/css/content.css\" rel=\"stylesheet\" type=\"text/css\" /></head>");
 	// create alters
-	content.replace( QRegExp("<p class=\"highlight-2\">([^<]*)</p>"), "<table class=alert><tr><td class=noBorder><img src=\"/usr/share/sidux-manual-reader/icons/software-update-urgent.svg\"></td><td class=noBorder>\\1</td></tr></table>");
-	content.replace( QRegExp("<div class=\"highlight-2\">([^<]*)</div>"), "<table class=alert><tr><td class=noBorder><img src=\"/usr/share/sidux-manual-reader/icons/software-update-urgent.svg\"></td><td class=noBorder>\\1</td></tr></table>");
+	content.replace( QRegExp("<p class=\"highlight-2\">([^<]*)</p>"), "<table class=alert><tr><td class=noBorder><img src=\"/usr/share/aptosid-manual-reader/icons/software-update-urgent.svg\"></td><td class=noBorder>\\1</td></tr></table>");
+	content.replace( QRegExp("<div class=\"highlight-2\">([^<]*)</div>"), "<table class=alert><tr><td class=noBorder><img src=\"/usr/share/aptosid-manual-reader/icons/software-update-urgent.svg\"></td><td class=noBorder>\\1</td></tr></table>");
 
 	
 	
@@ -228,9 +228,9 @@ void Smr::showChapter(QString id) {
 
 
 	// show exec buttons
-	if( id == "siduxcc") {
-		execPushButton->setText( tr("start")+" "+tr("sidux Control Center") );
-		execPushButton->setIcon( QPixmap( "/usr/share/icons/hicolor/16x16/apps/siduxcc.png") );
+	if( id == "aptosidcc") {
+		execPushButton->setText( tr("start")+" "+tr("aptosid Control Center") );
+		execPushButton->setIcon( QPixmap( "/usr/share/icons/hicolor/16x16/apps/aptosidcc.png") );
 		execPushButton->show();
 	}
 	else if( id == "netcardconfig") {
@@ -257,7 +257,7 @@ void Smr::showChapter(QString id) {
 void Smr::showUrl(QUrl input) {
 
 	QString id = input.toString();
-	id.replace("file:///usr/share/sidux-manual/"+lang+"/", "");
+	id.replace("file:///usr/share/aptosid-manual/"+lang+"/", "");
 
 	if( id.contains("http") ) {
 		QDesktopServices::openUrl(id);
@@ -345,9 +345,9 @@ void Smr::exec() {
 
 	QString program;
 	QStringList arguments;
-	if( execPushButton->text().contains("sidux Control Center") ) {
+	if( execPushButton->text().contains("aptosid Control Center") ) {
 		program = "su-to-root";
-		arguments << "-X" << "-c" << "/usr/bin/siduxcc-kde3";
+		arguments << "-X" << "-c" << "/usr/bin/aptosidcc-kde3";
 	}
 	else if( execPushButton->text().contains("Ceni") ) {
 		program = "x-terminal-emulator";
@@ -371,7 +371,7 @@ void Smr::quickstart() {
 	showChapter( "welcome-quick" );
 }
 
-void Smr::aboutSidux() {
+void Smr::aboutaptosid() {
   	if(!noHistory )
 		backHistory.prepend( h2IdList[currentChapter] );
 	forwardHistory.clear();
@@ -381,7 +381,7 @@ void Smr::aboutSidux() {
 void Smr::aboutReader() {
     	if(!noHistory )
 		backHistory.prepend( h2IdList[currentChapter] );
-	webView->setHtml("<h2>sidux Manual Reader</h2><b>"+tr("Programmer")+":</b> Fabian Wuertz xadras@sidux.com<br><b>"+tr("License")+":</b> GPL2<br>");
+	webView->setHtml("<h2>aptosid Manual Reader</h2><b>"+tr("Programmer")+":</b> Fabian Wuertz xadras@aptosid.com<br><b>"+tr("License")+":</b> GPL2<br>");
 	stackedWidget->setCurrentIndex(2);
 	navWidget->hide();
 }
@@ -408,11 +408,11 @@ void Smr::toRu() { lang = "ru"; loadManual(); }
 
 void Smr::loadManual() {
 
-	if( !QFile::exists( "/usr/share/doc/sidux-manual-"+lang+"/copyright" ) ) {
+	if( !QFile::exists( "/usr/share/doc/aptosid-manual-"+lang+"/copyright" ) ) {
 		if( QMessageBox::question(this, tr("Question"), tr("The manual with this language is not installed! Do you want to install it?"), QMessageBox::Yes | QMessageBox::No  ) == QMessageBox::Yes ) {
 			QString program = "su-to-root";
 			QStringList arguments;
-			arguments << "-X" << "-c" << "sidux-apt-qt4 +sidux-manual-"+lang;
+			arguments << "-X" << "-c" << "aptosid-apt-qt4 +aptosid-manual-"+lang;
 			QProcess *process = new QProcess(this);
 			connect( process, SIGNAL(finished(int)),this, SLOT(loadManual()));
 			process->start(program, arguments);
@@ -420,7 +420,7 @@ void Smr::loadManual() {
 		return;
 	}
 
-	QSettings settings("sidux-manual-reader");
+	QSettings settings("aptosid-manual-reader");
 	settings.setValue("language", lang);
 
 	indexTreeWidget->clear();
@@ -505,7 +505,7 @@ void Smr::loadManual() {
 			QString content = chapter;
 			content.replace("id=\""+id+"\">","");
 			content.replace(QRegExp("<div id=\"rev\">.*</div>"), "");
-			content.replace("../lib/", "/usr/share/sidux-manual/lib/");
+			content.replace("../lib/", "/usr/share/aptosid-manual/lib/");
 
 
 			if( !id.contains ("W3C//DTD") and id != "table-contents" ) {

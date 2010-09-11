@@ -1,5 +1,5 @@
 /*
-sidux Manual Reader
+aptosid Manual Reader
 Copyright (C) 2009 Fabian Wuertz  
 License GPL2
 */
@@ -10,7 +10,7 @@ License GPL2
 
 int main(int argc, char *argv[])
 {
-        QString appName = "sidux-manual-reader";
+        QString appName = "aptosid-manual-reader";
 	QApplication app(argc, argv);
 	QStringList args = app.arguments();
         QString locale = QLocale::system().name();

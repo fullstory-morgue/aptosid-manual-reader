@@ -1,4 +1,4 @@
-sidux-manual-reader (0.2.4) ORPHANED; urgency=low
+aptosid-manual-reader (0.2.4) ORPHANED; urgency=low
 
   * temporarily ORPHAN PACKAGE, it's currently not compatible to parse the
     structure of sidux-manual.
@@ -7,6 +7,7 @@ sidux-manual-reader (0.2.4) ORPHANED; urgency=low
   * switch to compact dh7 rules.
   * Build-Conflicts: libqt3-dev.
   * switch to compat level 8.
+  * rename to aptosid-manual-reader
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 05 May 2010 03:18:34 +0200
 

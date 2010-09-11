@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>sidux Manual Reader</string>
+   <string>aptosid Manual Reader</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
@@ -62,7 +62,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-previous.svg</normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-previous.svg</iconset>
+           <normaloff>../../../../../usr/share/aptosid-manual-reader/icons/go-previous.svg</normaloff>../../../../../usr/share/aptosid-manual-reader/icons/go-previous.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -88,7 +88,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-home.svg</normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-home.svg</iconset>
+           <normaloff>../../../../../usr/share/aptosid-manual-reader/icons/go-home.svg</normaloff>../../../../../usr/share/aptosid-manual-reader/icons/go-home.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -121,7 +121,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-next.svg</normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-next.svg</iconset>
+           <normaloff>../../../../../usr/share/aptosid-manual-reader/icons/go-next.svg</normaloff>../../../../../usr/share/aptosid-manual-reader/icons/go-next.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -144,7 +144,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>../../../../../usr/share/sidux-manual-reader/icons/preferences-desktop-accessibility.svg</normaloff>../../../../../usr/share/sidux-manual-reader/icons/preferences-desktop-accessibility.svg</iconset>
+           <normaloff>../../../../../usr/share/aptosid-manual-reader/icons/preferences-desktop-accessibility.svg</normaloff>../../../../../usr/share/aptosid-manual-reader/icons/preferences-desktop-accessibility.svg</iconset>
          </property>
          <property name="iconSize">
           <size>
@@ -246,7 +246,7 @@
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-previous.svg</normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-previous.svg</iconset>
+               <normaloff>../../../../../usr/share/aptosid-manual-reader/icons/go-previous.svg</normaloff>../../../../../usr/share/aptosid-manual-reader/icons/go-previous.svg</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -266,7 +266,7 @@
              </property>
              <property name="icon">
               <iconset>
-               <normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-next.svg</normaloff>../../../../../usr/share/sidux-manual-reader/icons/go-next.svg</iconset>
+               <normaloff>../../../../../usr/share/aptosid-manual-reader/icons/go-next.svg</normaloff>../../../../../usr/share/aptosid-manual-reader/icons/go-next.svg</iconset>
              </property>
              <property name="iconSize">
               <size>
@@ -347,7 +347,7 @@
     <property name="title">
      <string>Help</string>
     </property>
-    <addaction name="actionAboutSidux"/>
+    <addaction name="actionAboutaptosid"/>
     <addaction name="actionAboutReader"/>
    </widget>
    <widget class="QMenu" name="menuLanguage">
@@ -376,7 +376,7 @@
   <action name="actionClose">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual-reader/icons/application-exit.svg</normaloff>../../../../../usr/share/sidux-manual-reader/icons/application-exit.svg</iconset>
+     <normaloff>../../../../../usr/share/aptosid-manual-reader/icons/application-exit.svg</normaloff>../../../../../usr/share/aptosid-manual-reader/icons/application-exit.svg</iconset>
    </property>
    <property name="text">
     <string>Close</string>
@@ -388,7 +388,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/da-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/da-flag.png</iconset>
+     <normaloff>../../../../../usr/share/aptosid-manual/lib/flags/da-flag.png</normaloff>../../../../../usr/share/aptosid-manual/lib/flags/da-flag.png</iconset>
    </property>
    <property name="text">
     <string notr="true">Dansk</string>
@@ -403,7 +403,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/de-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/de-flag.png</iconset>
+     <normaloff>../../../../../usr/share/aptosid-manual/lib/flags/de-flag.png</normaloff>../../../../../usr/share/aptosid-manual/lib/flags/de-flag.png</iconset>
    </property>
    <property name="text">
     <string notr="true">Deutsch</string>
@@ -418,7 +418,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/en-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/en-flag.png</iconset>
+     <normaloff>../../../../../usr/share/aptosid-manual/lib/flags/en-flag.png</normaloff>../../../../../usr/share/aptosid-manual/lib/flags/en-flag.png</iconset>
    </property>
    <property name="text">
     <string notr="true">English</string>
@@ -433,7 +433,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/el-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/el-flag.png</iconset>
+     <normaloff>../../../../../usr/share/aptosid-manual/lib/flags/el-flag.png</normaloff>../../../../../usr/share/aptosid-manual/lib/flags/el-flag.png</iconset>
    </property>
    <property name="text">
     <string notr="true">Ελληνικά</string>
@@ -448,7 +448,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/es-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/es-flag.png</iconset>
+     <normaloff>../../../../../usr/share/aptosid-manual/lib/flags/es-flag.png</normaloff>../../../../../usr/share/aptosid-manual/lib/flags/es-flag.png</iconset>
    </property>
    <property name="text">
     <string notr="true">Español</string>
@@ -463,7 +463,7 @@
    </property>
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/fr-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/fr-flag.png</iconset>
+     <normaloff>../../../../../usr/share/aptosid-manual/lib/flags/fr-flag.png</normaloff>../../../../../usr/share/aptosid-manual/lib/flags/fr-flag.png</iconset>
    </property>
    <property name="text">
     <string notr="true">Français</string>
@@ -478,7 +478,7 @@
   <action name="actionHr">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/hr-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/hr-flag.png</iconset>
+     <normaloff>../../../../../usr/share/aptosid-manual/lib/flags/hr-flag.png</normaloff>../../../../../usr/share/aptosid-manual/lib/flags/hr-flag.png</iconset>
    </property>
    <property name="text">
     <string>Hrvatski</string>
@@ -490,7 +490,7 @@
   <action name="actionIt">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/it-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/it-flag.png</iconset>
+     <normaloff>../../../../../usr/share/aptosid-manual/lib/flags/it-flag.png</normaloff>../../../../../usr/share/aptosid-manual/lib/flags/it-flag.png</iconset>
    </property>
    <property name="text">
     <string>Italiano</string>
@@ -502,7 +502,7 @@
   <action name="actionNl">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/nl-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/nl-flag.png</iconset>
+     <normaloff>../../../../../usr/share/aptosid-manual/lib/flags/nl-flag.png</normaloff>../../../../../usr/share/aptosid-manual/lib/flags/nl-flag.png</iconset>
    </property>
    <property name="text">
     <string>Nederlands</string>
@@ -514,7 +514,7 @@
   <action name="actionPl">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/pl-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/pl-flag.png</iconset>
+     <normaloff>../../../../../usr/share/aptosid-manual/lib/flags/pl-flag.png</normaloff>../../../../../usr/share/aptosid-manual/lib/flags/pl-flag.png</iconset>
    </property>
    <property name="text">
     <string>Polski</string>
@@ -526,7 +526,7 @@
   <action name="actionJa">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/ja-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/ja-flag.png</iconset>
+     <normaloff>../../../../../usr/share/aptosid-manual/lib/flags/ja-flag.png</normaloff>../../../../../usr/share/aptosid-manual/lib/flags/ja-flag.png</iconset>
    </property>
    <property name="text">
     <string>日本語 Nihongo</string>
@@ -538,7 +538,7 @@
   <action name="actionPt">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/pt-br-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/pt-br-flag.png</iconset>
+     <normaloff>../../../../../usr/share/aptosid-manual/lib/flags/pt-br-flag.png</normaloff>../../../../../usr/share/aptosid-manual/lib/flags/pt-br-flag.png</iconset>
    </property>
    <property name="text">
     <string>Português BR</string>
@@ -550,7 +550,7 @@
   <action name="actionRo">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/ro-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/ro-flag.png</iconset>
+     <normaloff>../../../../../usr/share/aptosid-manual/lib/flags/ro-flag.png</normaloff>../../../../../usr/share/aptosid-manual/lib/flags/ro-flag.png</iconset>
    </property>
    <property name="text">
     <string>Română</string>
@@ -562,7 +562,7 @@
   <action name="actionRu">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual/lib/flags/ru-flag.png</normaloff>../../../../../usr/share/sidux-manual/lib/flags/ru-flag.png</iconset>
+     <normaloff>../../../../../usr/share/aptosid-manual/lib/flags/ru-flag.png</normaloff>../../../../../usr/share/aptosid-manual/lib/flags/ru-flag.png</iconset>
    </property>
    <property name="text">
     <string>Русский</string>
@@ -571,19 +571,19 @@
     <string>ru</string>
    </property>
   </action>
-  <action name="actionAboutSidux">
+  <action name="actionAboutaptosid">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/sidux-manual-reader/icons/dialog-question.svg</normaloff>../../../../../usr/share/sidux-manual-reader/icons/dialog-question.svg</iconset>
+     <normaloff>../../../../../usr/share/aptosid-manual-reader/icons/dialog-question.svg</normaloff>../../../../../usr/share/aptosid-manual-reader/icons/dialog-question.svg</iconset>
    </property>
    <property name="text">
-    <string>About sidux</string>
+    <string>About aptosid</string>
    </property>
   </action>
   <action name="actionAboutReader">
    <property name="icon">
     <iconset>
-     <normaloff>../../../../../usr/share/icons/hicolor/32x32/apps/sidux-manual.png</normaloff>../../../../../usr/share/icons/hicolor/32x32/apps/sidux-manual.png</iconset>
+     <normaloff>../../../../../usr/share/icons/hicolor/32x32/apps/aptosid-manual.png</normaloff>../../../../../usr/share/icons/hicolor/32x32/apps/aptosid-manual.png</iconset>
    </property>
    <property name="text">
     <string>About the reader</string>
@@ -1016,10 +1016,10 @@
    </hints>
   </connection>
   <connection>
-   <sender>actionAboutSidux</sender>
+   <sender>actionAboutaptosid</sender>
    <signal>activated()</signal>
    <receiver>Smr</receiver>
-   <slot>aboutSidux()</slot>
+   <slot>aboutaptosid()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>-1</x>
@@ -1124,7 +1124,7 @@
   <slot>toRo()</slot>
   <slot>toRu()</slot>
   <slot>quickstart()</slot>
-  <slot>aboutSidux()</slot>
+  <slot>aboutaptosid()</slot>
   <slot>aboutReader()</slot>
   <slot>forward1(QAction*)</slot>
   <slot>clearSearch()</slot>
