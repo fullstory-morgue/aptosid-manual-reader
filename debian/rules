@@ -1,4 +1,4 @@
 #!/usr/bin/make -f
 
 %:
-	dh --buildsystem=qmake ${@}
+	dh ${@} --buildsystem=qmake

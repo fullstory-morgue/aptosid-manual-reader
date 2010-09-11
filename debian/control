@@ -8,7 +8,7 @@ Build-Depends: debhelper (>= 7.4.16),
  libqt4-dev,
  qt4-qmake
 Build-Conflicts: libqt3-dev
-Standards-Version: 3.8.4
+Standards-Version: 3.9.1
 Vcs-Svn: svn://svn.berlios.de/fullstory/sidux-manual-reader/trunk
 Vcs-Browser: http://svn.berlios.de/wsvn/fullstory/sidux-manual-reader/trunk/
 
