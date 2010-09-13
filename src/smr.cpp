@@ -1,6 +1,7 @@
 /*
 aptosid Manual Reader
-Copyright (C) 2009 Fabian Wuertz  
+Copyright (C) 2009 Fabian Wuertz
+Coryright (C) 2010 Nikolas Poniros
 License GPL2
 */
 
@@ -15,12 +16,11 @@ License GPL2
 #include "QWebFrame"
 #include "QDesktopServices"
 #include <QSettings>
+#include <QDebug>
 
 Smr::Smr(QStringList args, QMainWindow* parent, Qt::WFlags flags): QMainWindow (parent, flags) {
 
 	manpath = "/usr/share/aptosid-manual/";
-
-
 
 	// init gui
  	setupUi(this);
@@ -65,7 +65,7 @@ void Smr::searchManual() {
 
 	if(searchLineEdit->text().isEmpty() )
 		return;
-  
+ 
 	QStringList searchList = searchLineEdit->text().split(" ");
 	QTreeWidget *tmpTreeWidget1 = new QTreeWidget;
 	tmpTreeWidget1->setColumnCount(3);
@@ -150,7 +150,6 @@ void Smr::showChapter0(QTreeWidgetItem* item, int i) {
 
 void Smr::showChapter(QString id) {
   
-  
 	noHistory = false;
   
 	if( chaptersTreeWidget->findItems(id, Qt::MatchExactly, 1).count() < 1 ) {
@@ -160,8 +159,6 @@ void Smr::showChapter(QString id) {
 		return;
 	}
 
-
-
 	QString content = chaptersTreeWidget->findItems(id, Qt::MatchExactly, 1).first()->text(2);
 	content.prepend("<head><link href=\"/usr/share/aptosid-manual-reader/css/content.css\" rel=\"stylesheet\" type=\"text/css\" /></head>");
 	// create alters
@@ -169,19 +166,13 @@ void Smr::showChapter(QString id) {
 	content.replace( QRegExp("<div class=\"highlight-2\">([^<]*)</div>"), "<table class=alert><tr><td class=noBorder><img src=\"/usr/share/aptosid-manual-reader/icons/software-update-urgent.svg\"></td><td class=noBorder>\\1</td></tr></table>");
 
 	
-	
-	
-	
-	if( searchLineEdit->text() != "" ) {
+	if( searchLineEdit->text() != "" && searchLineEdit->text() != "Type your keyword search here") {
 		QStringList searchList = searchLineEdit->text().split(" ");
 		foreach(QString search, searchList)
 			content.replace(" "+search+" ", " <b style=\"background-color:#FFFF66; font-size:x-large\">"+search+"</b> ");
 	}
 
-
-
  	webView->setHtml(content);
-
 	
 	// backMenu
 	backMenu->clear();
@@ -213,12 +204,21 @@ void Smr::showChapter(QString id) {
 
 	// show previous/next buttons
 	currentChapter = h2IdList.indexOf(id);
+	qDebug() << "Id is" << id;
+	qDebug() << "Current Chapter is" << currentChapter ;
+	// Make sure that the currentChapter actually exists
+	if( currentChapter < 0 ) {
+		QMessageBox::critical(this, tr("Error"), tr("The current chapter is invalid. Will return to Index. Please inform the developers about this. Thank you!") );
+		showIndex();
+	} 
+	
 	if( currentChapter > 0 ) {
 		previousPushButton->setText( h2List[currentChapter-1] );
 		previousPushButton->show();
 	}
 	else
 		previousPushButton->hide();
+
 	if(currentChapter+1 < h2List.count() ) {
 		nextPushButton->setText( h2List[currentChapter+1] );
 		nextPushButton->show();
@@ -226,14 +226,16 @@ void Smr::showChapter(QString id) {
 	else
 		nextPushButton->hide();
 
-
 	// show exec buttons
+	/*
+	Disable for now as aptosidcc is not mentioned in the manual
 	if( id == "aptosidcc") {
 		execPushButton->setText( tr("start")+" "+tr("aptosid Control Center") );
 		execPushButton->setIcon( QPixmap( "/usr/share/icons/hicolor/16x16/apps/aptosidcc.png") );
 		execPushButton->show();
 	}
-	else if( id == "netcardconfig") {
+	else */
+	if( id == "netcardconfig") {
 		execPushButton->setText( tr("start")+" "+tr("Ceni") );
 		execPushButton->setIcon( QPixmap( "/usr/share/icons/hicolor/16x16/apps/ceni.png") );
 		execPushButton->show();
@@ -247,11 +249,8 @@ void Smr::showChapter(QString id) {
 		execPushButton->hide();
 	}
 
-		
-
 	navWidget->show();
 	stackedWidget->setCurrentIndex(2); 
-
 }
 
 void Smr::showUrl(QUrl input) {
@@ -264,17 +263,24 @@ void Smr::showUrl(QUrl input) {
 		return;
 	}
 
-
+	qDebug() << " id is afjk" << id;
 	if( !id.contains("#") ) {
-		if( chaptersTreeWidget->findItems(id, Qt::MatchContains, 2 ).count() < 1 )
-			id = "missing";
-		else
-			id = chaptersTreeWidget->findItems(id, Qt::MatchExactly, 2).first()->text(1);
+		if( chaptersTreeWidget->findItems(id, Qt::MatchContains, 2 ).count() < 1 ) {
+			qDebug() << "im here 1";
+			id = "missing";}
+		else{
+
+			qDebug() << "ock";
+			//id = 
+			chaptersTreeWidget->findItems(id, Qt::MatchExactly, 2);}//.first()->text(1); }
 	}
+	qDebug() << " idaofjafj" << id;
 	id = id.split("#")[1];
 	backHistory.prepend( h2IdList[currentChapter] );
 	forwardHistory.clear();
+	qDebug() << "Calling showChapter(id) with" << id;
 	showChapter( id );
+	qDebug() << "Call succeeded";
 }
 
 
@@ -351,38 +357,38 @@ void Smr::exec() {
 	}
 	else if( execPushButton->text().contains("Ceni") ) {
 		program = "x-terminal-emulator";
-		arguments << "-e" << "/usr/bin/Ceni";
-	}
-	else if( execPushButton->text().contains("KPPP") )
-		program = "/usr/bin/kppp";
-	else
-		return;
+				arguments << "-e" << "/usr/bin/Ceni";
+			}
+			else if( execPushButton->text().contains("KPPP") )
+				program = "/usr/bin/kppp";
+			else
+				return;
 
-	QProcess *myProcess = new QProcess(this);
-	myProcess->start(program, arguments);
+			QProcess *myProcess = new QProcess(this);
+			myProcess->start(program, arguments);
 
-}
+		}
 
 
-void Smr::quickstart() {
-	if(!noHistory )
-		backHistory.prepend( h2IdList[currentChapter] );
-	forwardHistory.clear();
-	showChapter( "welcome-quick" );
-}
+		void Smr::quickstart() {
+			if(!noHistory )
+				backHistory.prepend( h2IdList[currentChapter] );
+			forwardHistory.clear();
+			showChapter( "welcome-quick" );
+		}
 
-void Smr::aboutaptosid() {
-  	if(!noHistory )
-		backHistory.prepend( h2IdList[currentChapter] );
-	forwardHistory.clear();
-	showChapter( "cred-team" );
-}
+		void Smr::aboutaptosid() {
+			if(!noHistory )
+				backHistory.prepend( h2IdList[currentChapter] );
+			forwardHistory.clear();
+			showChapter( "cred-team" );
+		}
 
-void Smr::aboutReader() {
-    	if(!noHistory )
-		backHistory.prepend( h2IdList[currentChapter] );
-	webView->setHtml("<h2>aptosid Manual Reader</h2><b>"+tr("Programmer")+":</b> Fabian Wuertz xadras@aptosid.com<br><b>"+tr("License")+":</b> GPL2<br>");
-	stackedWidget->setCurrentIndex(2);
+		void Smr::aboutReader() {
+				if(!noHistory )
+				backHistory.prepend( h2IdList[currentChapter] );
+			webView->setHtml("<h2>aptosid Manual Reader</h2><b>"+tr("Programmers")+":</b> Fabian Wuertz xadras@aptosid.com <br> Nikolas Poniros edhunter@aptosid.com<br><b>"+tr("License")+":</b> GPL2<br>");
+			stackedWidget->setCurrentIndex(2);
 	navWidget->hide();
 }
 
@@ -409,14 +415,16 @@ void Smr::toRu() { lang = "ru"; loadManual(); }
 void Smr::loadManual() {
 
 	if( !QFile::exists( "/usr/share/doc/aptosid-manual-"+lang+"/copyright" ) ) {
-		if( QMessageBox::question(this, tr("Question"), tr("The manual with this language is not installed! Do you want to install it?"), QMessageBox::Yes | QMessageBox::No  ) == QMessageBox::Yes ) {
-			QString program = "su-to-root";
+		//if( QMessageBox::question(this, tr("Question"), tr("The manual with this language is not installed! Do you want to install it?"), QMessageBox::Yes | QMessageBox::No  ) == QMessageBox::Yes ) {
+		QString s = tr("This language is not installed! If you want to use it install it with") + " apt-get install aptosid-manual-" + lang;
+		QMessageBox::warning(this, tr("Warning"), s);
+			/*QString program = "su-to-root";
 			QStringList arguments;
 			arguments << "-X" << "-c" << "aptosid-apt-qt4 +aptosid-manual-"+lang;
 			QProcess *process = new QProcess(this);
 			connect( process, SIGNAL(finished(int)),this, SLOT(loadManual()));
 			process->start(program, arguments);
-		}
+		}*/
 		return;
 	}
 
@@ -447,9 +455,9 @@ void Smr::loadManual() {
 	
 	// get menu
 	// ------------------------------------------------------------------------------
+	QString line = stream.readLine();
 	while ( !stream.atEnd() ) {
 	
-		QString line = stream.readLine();
 		if( line.contains("showHide") ) {
 			QString h1   = line.split(">")[2].replace("</a", "").replace("&amp;", "&").replace("&#230;", QString::fromUtf8("æ") );
 			QString h1Id = line.split("\"")[5];
@@ -458,29 +466,68 @@ void Smr::loadManual() {
 			item->setText( 1,  h1Id ); 
 			stream.readLine();
 			line = 	stream.readLine();
-
-
-			while( line.contains("<li><a href="))
+			while( ! line.contains("showHide"))
 			{
-				if( line.contains(".htm\"") )
-					line.replace( ".htm", ".htm#misssing" );
-				QString h2   = line.split(">")[2].replace("</a", "").replace("&amp;", "&").replace("&#198;", QString::fromUtf8("Æ")).replace("&#229;", QString::fromUtf8("å")).replace("&#230;", QString::fromUtf8("æ")).replace("&#248;", QString::fromUtf8("ø"));
-				QString h2Id = line.split("\"")[1].split("#")[1];
-				if ( h2Id == "partition" and h2.contains("GParted") )
-					h2Id = "partitionGp";
-				if( !h2Id.contains("table-contents") ) {
-					QTreeWidgetItem *subItem = new QTreeWidgetItem(item);
-					subItem->setText( 0,  h2 );
-					subItem->setText( 1,  h2Id );
-					h2List.append(h2);
-					h2IdList.append(h2Id);
+				if ( line.contains("<li><a href=")){
+					if( line.contains(".htm\"") )
+						line.replace( ".htm", ".htm#misssing" );
+					QString h2   = line.split(">")[2].replace("</a", "").replace("&amp;", "&").replace("&#198;", QString::fromUtf8("Æ")).replace("&#229;", QString::fromUtf8("å")).replace("&#230;", QString::fromUtf8("æ")).replace("&#248;", QString::fromUtf8("ø"));
+					QString h2Id = line.split("\"")[1].split("#")[1];
+					if ( h2Id == "partition" and h2.contains("GParted") )
+						h2Id = "partitionGp";
+					if( !h2Id.contains("table-contents") ) {
+						QTreeWidgetItem *subItem = new QTreeWidgetItem(item);
+						//--- used to read the second level of the menu
+						if ( h2.contains("&#8658"))
+						{
+							h2.replace("&#8658;", "");
+							subItem->setText( 0,  h2 );
+							subItem->setText( 1,  h2Id );
+							h2List.append(h2);
+							h2IdList.append(h2Id);
+							line = stream.readLine();
+							while( ! line.contains("</ul>"))
+							{
+								if ( line.contains("<li><a href=") )
+								{
+								if( line.contains(".htm\"") )
+									line.replace(".htm", ".htm#missing" );
+								QString h3 = line.split(">")[2].replace("</a", "").replace("&amp;", "&").replace("&#198;", QString::fromUtf8("Æ")).replace("&#229;", QString::fromUtf8("å")).replace("    &#230;", QString::fromUtf8("æ")).replace("&#248;", QString::fromUtf8("ø"));
+								QString h3Id = line.split("\"")[1].split("#")[1];
+								if ( h3Id == "partition" and h3.contains("GParted") )
+									h2Id = "partitionGp";
+								if( !h3Id.contains("table-contents") ) {
+								QTreeWidgetItem *subSubItem = new QTreeWidgetItem(subItem);
+								subSubItem->setText( 0, h3 );
+								subSubItem->setText( 1, h3Id );
+								h2List.append(h3);
+								h2IdList.append(h3Id);
+								}
+								}
+								line = stream.readLine();
+							}
+						//---
+						} else {
+							subItem->setText( 0, h2 );
+							subItem->setText( 1, h2Id );
+							h2List.append(h2);
+							h2IdList.append(h2Id);
+						}
+					}
 				}
+				
 				line = stream.readLine();
+				if ( line.contains("<!-- menu ends here -->"))
+					break;
 			}
+	
+		}
 
+		if ( ! line.contains("showHide"))
+		{
+			line = stream.readLine();
 		}
 	}
-
 
 	// get entries
 	// ------------------------------------------------------------------------------
@@ -514,6 +561,11 @@ void Smr::loadManual() {
 				item->setText( 0,  title );
 				item->setText( 1,  id );
 				item->setText( 2,  content );
+				// Add titles and id of div tags which are not in the menu
+				if ( ! h2IdList.contains(id) ){
+					h2List.append(title);
+					h2IdList.append(id);
+				}
 			}
 		}
 	}

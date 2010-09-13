@@ -17,7 +17,6 @@ Architecture: any
 Depends: ${shlibs:Depends},
  ${misc:Depends},
  menu,
- aptosid-apt-qt4,
  aptosid-manual-common 
 Description: aptosid manual reader
  A reader for the aptosid manual.

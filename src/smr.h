@@ -32,7 +32,7 @@ class Smr : public QMainWindow, Ui::Smr {
 
 	private slots:
 		void loadManual();
-		void showChapter0(QTreeWidgetItem*,int);
+		void showChapter0(QTreeWidgetItem*, int);
 		void showChapter(QString);
 		void showUrl(QUrl);
 		void searchManual();

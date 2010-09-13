@@ -1,5 +1,6 @@
 aptosid-manual-reader (0.2.4) ORPHANED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * temporarily ORPHAN PACKAGE, it's currently not compatible to parse the
     structure of sidux-manual.
   * wrap debian/control in a syntax compliant way.
@@ -9,7 +10,16 @@ aptosid-manual-reader (0.2.4) ORPHANED; urgency=low
   * switch to compat level 8.
   * rename to aptosid-manual-reader
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Wed, 05 May 2010 03:18:34 +0200
+  [ Nikolas Poniros ]
+  * Updated copyright and added myself.
+  * Fixed menu parsing.
+  * Replaced code to call aptosid-apt-qt4 with a warning that language is not
+    installed and the manual way to install it.
+  * Removed aptosid-apt-qt4 from dependencies.
+  * Commented out some aptosidcc specific code 
+  * Do not highlight the words of the default search string 
+ 
+ -- Nikolas Poniros <edhunter@aptosid.com>  Mon, 13 Sep 2010 05:14:20 +0200
 
 sidux-manual-reader (0.2.3) unstable; urgency=low
 
