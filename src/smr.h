@@ -73,6 +73,8 @@ class Smr : public QMainWindow, Ui::Smr {
 		QString lang;
 		QMenu *backMenu, *forwardMenu;
 		bool noHistory, start;
+		void getEntries(QString, QString);
+		void getMenu(QString, QString);
 
 };
 #endif

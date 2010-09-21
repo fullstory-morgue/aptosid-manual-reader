@@ -18,8 +18,11 @@ aptosid-manual-reader (0.2.4) ORPHANED; urgency=low
   * Removed aptosid-apt-qt4 from dependencies.
   * Commented out some aptosidcc specific code 
   * Do not highlight the words of the default search string 
- 
- -- Nikolas Poniros <edhunter@aptosid.com>  Mon, 13 Sep 2010 05:14:20 +0200
+  * Split loadManual function into smaller subfunctions
+  * Added some tests to keep the application from segfaulting if it doesnt find a chapter/id
+  * Re-wrote parts of the code to be able to read the new manual structure
+
+ -- Nikolas Poniros <edhunter@aptosid.com>  Tue, 21 Sep 2010 15:24:28 +0200
 
 sidux-manual-reader (0.2.3) unstable; urgency=low
 

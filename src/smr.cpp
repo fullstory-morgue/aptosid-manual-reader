@@ -210,6 +210,7 @@ void Smr::showChapter(QString id) {
 	if( currentChapter < 0 ) {
 		QMessageBox::critical(this, tr("Error"), tr("The current chapter is invalid. Will return to Index. Please inform the developers about this. Thank you!") );
 		showIndex();
+		return;
 	} 
 	
 	if( currentChapter > 0 ) {
@@ -227,14 +228,6 @@ void Smr::showChapter(QString id) {
 		nextPushButton->hide();
 
 	// show exec buttons
-	/*
-	Disable for now as aptosidcc is not mentioned in the manual
-	if( id == "aptosidcc") {
-		execPushButton->setText( tr("start")+" "+tr("aptosid Control Center") );
-		execPushButton->setIcon( QPixmap( "/usr/share/icons/hicolor/16x16/apps/aptosidcc.png") );
-		execPushButton->show();
-	}
-	else */
 	if( id == "netcardconfig") {
 		execPushButton->setText( tr("start")+" "+tr("Ceni") );
 		execPushButton->setIcon( QPixmap( "/usr/share/icons/hicolor/16x16/apps/ceni.png") );
@@ -263,18 +256,21 @@ void Smr::showUrl(QUrl input) {
 		return;
 	}
 
-	qDebug() << " id is afjk" << id;
 	if( !id.contains("#") ) {
-		if( chaptersTreeWidget->findItems(id, Qt::MatchContains, 2 ).count() < 1 ) {
-			qDebug() << "im here 1";
-			id = "missing";}
+		if( chaptersTreeWidget->findItems(id, Qt::MatchContains, 2 ).count() < 1 ) 
+			id = "missing";
 		else{
-
-			qDebug() << "ock";
-			//id = 
-			chaptersTreeWidget->findItems(id, Qt::MatchExactly, 2);}//.first()->text(1); }
+			if( chaptersTreeWidget->findItems(id, Qt::MatchExactly, 2).count() > 0 ){
+				id = chaptersTreeWidget->findItems(id, Qt::MatchContains, 2).first()->text(1); 
+			}else{
+				QMessageBox::critical(this, tr("Error"), tr("An error occured while trying to load a new chapter. Please inform the developers about this. Thank you!") );
+				qDebug() << "Error loading chapter" ;
+				qDebug() << "Id is" << id;
+				showIndex();
+				return;
+			}
+		}
 	}
-	qDebug() << " idaofjafj" << id;
 	id = id.split("#")[1];
 	backHistory.prepend( h2IdList[currentChapter] );
 	forwardHistory.clear();
@@ -351,44 +347,40 @@ void Smr::exec() {
 
 	QString program;
 	QStringList arguments;
-	if( execPushButton->text().contains("aptosid Control Center") ) {
-		program = "su-to-root";
-		arguments << "-X" << "-c" << "/usr/bin/aptosidcc-kde3";
-	}
-	else if( execPushButton->text().contains("Ceni") ) {
+	if( execPushButton->text().contains("Ceni") ) {
 		program = "x-terminal-emulator";
-				arguments << "-e" << "/usr/bin/Ceni";
-			}
-			else if( execPushButton->text().contains("KPPP") )
-				program = "/usr/bin/kppp";
-			else
-				return;
+		arguments << "-e" << "/usr/bin/Ceni";
+	}
+	else if( execPushButton->text().contains("KPPP") )
+		program = "/usr/bin/kppp";
+	else
+		return;
 
-			QProcess *myProcess = new QProcess(this);
-			myProcess->start(program, arguments);
+	QProcess *myProcess = new QProcess(this);
+	myProcess->start(program, arguments);
 
-		}
+}
 
 
-		void Smr::quickstart() {
-			if(!noHistory )
-				backHistory.prepend( h2IdList[currentChapter] );
-			forwardHistory.clear();
-			showChapter( "welcome-quick" );
-		}
+void Smr::quickstart() {
+	if(!noHistory )
+		backHistory.prepend( h2IdList[currentChapter] );
+	forwardHistory.clear();
+	showChapter( "welcome-quick" );
+}
 
-		void Smr::aboutaptosid() {
-			if(!noHistory )
-				backHistory.prepend( h2IdList[currentChapter] );
-			forwardHistory.clear();
-			showChapter( "cred-team" );
-		}
+void Smr::aboutaptosid() {
+	if(!noHistory )
+		backHistory.prepend( h2IdList[currentChapter] );
+	forwardHistory.clear();
+	showChapter( "cred-team" );
+}
 
-		void Smr::aboutReader() {
-				if(!noHistory )
-				backHistory.prepend( h2IdList[currentChapter] );
-			webView->setHtml("<h2>aptosid Manual Reader</h2><b>"+tr("Programmers")+":</b> Fabian Wuertz xadras@aptosid.com <br> Nikolas Poniros edhunter@aptosid.com<br><b>"+tr("License")+":</b> GPL2<br>");
-			stackedWidget->setCurrentIndex(2);
+void Smr::aboutReader() {
+	if(!noHistory )
+		backHistory.prepend( h2IdList[currentChapter] );
+	webView->setHtml("<h2>aptosid Manual Reader</h2><b>"+tr("Programmers")+":</b> Fabian Wuertz xadras@aptosid.com <br> Nikolas Poniros edhunter@aptosid.com<br><b>"+tr("License")+":</b> GPL2<br>");
+	stackedWidget->setCurrentIndex(2);
 	navWidget->hide();
 }
 
@@ -415,16 +407,8 @@ void Smr::toRu() { lang = "ru"; loadManual(); }
 void Smr::loadManual() {
 
 	if( !QFile::exists( "/usr/share/doc/aptosid-manual-"+lang+"/copyright" ) ) {
-		//if( QMessageBox::question(this, tr("Question"), tr("The manual with this language is not installed! Do you want to install it?"), QMessageBox::Yes | QMessageBox::No  ) == QMessageBox::Yes ) {
 		QString s = tr("This language is not installed! If you want to use it install it with") + " apt-get install aptosid-manual-" + lang;
 		QMessageBox::warning(this, tr("Warning"), s);
-			/*QString program = "su-to-root";
-			QStringList arguments;
-			arguments << "-X" << "-c" << "aptosid-apt-qt4 +aptosid-manual-"+lang;
-			QProcess *process = new QProcess(this);
-			connect( process, SIGNAL(finished(int)),this, SLOT(loadManual()));
-			process->start(program, arguments);
-		}*/
 		return;
 	}
 
@@ -444,9 +428,19 @@ void Smr::loadManual() {
 	QStringList pages = QDir( manpath2 ).entryList( QDir::Files );
 	pages.removeOne( "menu-"+lang );
 
+	getMenu(manpath2, pages[0]);
 
+	foreach(QString page, pages )
+		getEntries(page, manpath2);
+
+	noHistory = true;
+	showIndex();
+}
+
+void Smr::getMenu(QString manpath2, QString page)
+{
 	// get h1 
-	QFile file1( manpath2+pages[0] );
+	QFile file1( manpath2+page );
 	file1.open( QIODevice::ReadOnly | QIODevice::Text );
 	QTextStream stream( &file1 );
 	QString tmp;
@@ -459,7 +453,7 @@ void Smr::loadManual() {
 	while ( !stream.atEnd() ) {
 	
 		if( line.contains("showHide") ) {
-			QString h1   = line.split(">")[2].replace("</a", "").replace("&amp;", "&").replace("&#230;", QString::fromUtf8("æ") );
+			QString h1   = line.split(">")[2].replace("</a", "").replace("&amp;", "&").replace("&#230;", QString::fromUtf8("æ") ).replace("&#8482;", QString::fromUtf8("™"));
 			QString h1Id = line.split("\"")[5];
 			QTreeWidgetItem *item = new QTreeWidgetItem(indexTreeWidget);
 			item->setText( 0,  h1 );
@@ -471,7 +465,7 @@ void Smr::loadManual() {
 				if ( line.contains("<li><a href=")){
 					if( line.contains(".htm\"") )
 						line.replace( ".htm", ".htm#misssing" );
-					QString h2   = line.split(">")[2].replace("</a", "").replace("&amp;", "&").replace("&#198;", QString::fromUtf8("Æ")).replace("&#229;", QString::fromUtf8("å")).replace("&#230;", QString::fromUtf8("æ")).replace("&#248;", QString::fromUtf8("ø"));
+					QString h2   = line.split(">")[2].replace("</a", "").replace("&amp;", "&").replace("&#198;", QString::fromUtf8("Æ")).replace("&#229;", QString::fromUtf8("å")).replace("&#230;", QString::fromUtf8("æ")).replace("&#248;", QString::fromUtf8("ø")).replace("&#8482;", QString::fromUtf8("™"));
 					QString h2Id = line.split("\"")[1].split("#")[1];
 					if ( h2Id == "partition" and h2.contains("GParted") )
 						h2Id = "partitionGp";
@@ -528,48 +522,106 @@ void Smr::loadManual() {
 			line = stream.readLine();
 		}
 	}
+}
 
-	// get entries
-	// ------------------------------------------------------------------------------
-	foreach(QString page, pages ) {
-
-		QFile file2( manpath2+page );
-		file2.open( QIODevice::ReadOnly | QIODevice::Text );
-		QTextStream stream( &file2 );
-		QStringList chapters;
-		QString pageContent;
-		while ( !stream.atEnd() )
-			pageContent += stream.readLine()+"\n";
-
-		chapters = pageContent.split("<div class=\"divider\"");
-		if( chapters.count() > 1 )
-			chapters.removeFirst();
-
-		foreach(QString chapter, chapters) {
-			QString id      = chapter.split("\"")[1];
-			QString title   = chapter.split(">")[2];
-			title.replace("</h2","");
-			QString content = chapter;
-			content.replace("id=\""+id+"\">","");
-			content.replace(QRegExp("<div id=\"rev\">.*</div>"), "");
-			content.replace("../lib/", "/usr/share/aptosid-manual/lib/");
-
-
-			if( !id.contains ("W3C//DTD") and id != "table-contents" ) {
-				QTreeWidgetItem *item = new QTreeWidgetItem(chaptersTreeWidget);
-				title.replace("</h3", "");
-				item->setText( 0,  title );
-				item->setText( 1,  id );
-				item->setText( 2,  content );
-				// Add titles and id of div tags which are not in the menu
-				if ( ! h2IdList.contains(id) ){
-					h2List.append(title);
+void Smr::getEntries(QString page, QString manpath2)
+{
+	QFile file( manpath2 + page );
+	file.open( QIODevice::ReadOnly | QIODevice::Text );
+	QTextStream stream(&file);
+	QString id, title, content, line, contentNext;
+	QStringList idList, titleList;
+	content = "";
+	contentNext = "";
+	line = stream.readLine();
+	//Ignore menu
+	while (!line.contains("<!-- menu ends here -->") )
+		line = stream.readLine();
+	bool needTitle = false;
+	bool nextLoop = false;
+	/* 
+		The idea is: read the whole page line by line and search for <div class="divider" lines and from there get the id. If the divider id is not already in h2IdList add it (if it is already in there it means that the menu has this id in it) if its already in break saving the id and then the title and content for the next loop. For ids that are not in the menu of the manual dont split the divider into chapters, read it in the chapter before but for all ids/titles create entry in the treewidget so we dont loose content/ids.
+	*/
+	while( !stream.atEnd() )
+	{
+		id = "";
+		while( !h2IdList.contains(id) && !stream.atEnd() )
+		{
+			if(line.contains("<div class=\"divider\"") )
+			{
+				id = line.split("\"")[3];
+				if ( h2IdList.contains(id) )
+					nextLoop = true;
+				else
+				{
 					h2IdList.append(id);
+				//	qDebug() << "ID is" << id;
+					idList.append(id);
+					needTitle = true;
+					// reset ID so I go in the loop again
+					id = "";
 				}
 			}
-		}
-	}
 
-	noHistory = true;
-	showIndex();
+			if(nextLoop)
+				contentNext = contentNext + line;
+			else
+				//Have this here to first check if the current line is an id line
+				content = content + "\n" + line;
+			
+			while( !line.contains(QRegExp("<h[0-9].*>.*</h[0-9]>") ) && needTitle )
+			{
+				content = content + line;
+			    line = stream.readLine();
+			}
+			
+			if(line.contains(QRegExp("<h[0-9].*>.*</h[0-9]>") ) && needTitle )
+			{
+				needTitle = false;
+				//qDebug() << "line is" << line;
+				title = line.split(">")[1];
+				title.replace(QRegExp("</h[0-9]"), "");
+				title.replace("</a", "").replace("&amp;", "&").replace("&#198;", QString::fromUtf8("Æ")).replace("&#229;", QString::fromUtf8("å")).replace("    &#230;", QString::fromUtf8("æ")).replace("&#248;", QString::fromUtf8("ø")).replace("&#8482;", QString::fromUtf8("™"));
+
+				//Wait till the end of the loop to add the title as it belongs to the next chapter
+				if (!nextLoop){
+					if ( !h2List.contains(title) )
+						h2List.append(title);
+					titleList.append(title);
+					contentNext = contentNext + line;
+				}
+				content = content + line;
+				//qDebug() << "Title is" << title;
+			}
+			line = stream.readLine();
+		}
+
+		for (int i = 0; i < idList.size(); i++ )
+		{
+			content.replace("id=\"" + idList[i] + "\">", "");
+		}
+		content.replace(QRegExp("<div id=\"rev\">.*</div>"), "");
+		content.replace("../lib/", manpath + "lib/");
+
+		for (int i = 0; i < idList.size(); i++)
+		{
+			if( !idList[i].contains("W3C//DTD") && idList[i] != "table-contents" )
+			{
+				QTreeWidgetItem *item = new QTreeWidgetItem(chaptersTreeWidget);
+				item->setText( 0,  titleList[i] );
+				item->setText( 1,  idList[i] );
+				item->setText( 2,  content );
+			}
+		}
+		
+		idList.clear();
+		titleList.clear();
+		//Do this so we dont loose id/title/content
+		idList.append(id);
+		titleList.append(title);
+		content = contentNext;
+		contentNext = "";
+		line = stream.readLine();
+		nextLoop = false;
+	}
 }
