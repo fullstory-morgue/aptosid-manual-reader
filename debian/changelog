@@ -1,8 +1,12 @@
 aptosid-manual-reader (0.2.6) UNRELEASED; urgency=low
 
+  [ Stefan Lippers-Hollmann ]
   * NOT RELEASED YET
 
- -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 30 Sep 2010 22:55:21 +0200
+  [ Nikolas Poniros ]
+  * Updated the long description 
+
+ -- Nikolas Poniros <edhunter@aptosid.com>  Thu, 30 Sep 2010 23:18:19 +0200
 
 aptosid-manual-reader (0.2.5) unstable; urgency=low
 
