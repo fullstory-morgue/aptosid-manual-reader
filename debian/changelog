@@ -1,9 +1,5 @@
-aptosid-manual-reader (0.2.6) UNRELEASED; urgency=low
+aptosid-manual-reader (0.2.6) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Nikolas Poniros ]
   * Updated the long description 
 
  -- Nikolas Poniros <edhunter@aptosid.com>  Thu, 30 Sep 2010 23:18:19 +0200
