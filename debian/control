@@ -19,11 +19,8 @@ Depends: ${shlibs:Depends},
  menu,
  aptosid-manual-common 
 Description: aptosid manual reader
- A reader for the aptosid manual.
- .
  It offers a simple tree structure for easy browsing of the menu
  and back/forward, next/previews chapter buttons for fast browsing
  of the manual contents.
  .
- It also has a simple search field to enable you to easily find
- what you are looking for.
+ A simple search field allows fulltext searches.
