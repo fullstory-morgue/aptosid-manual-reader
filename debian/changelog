@@ -1,8 +1,6 @@
-aptosid-manual-reader (0.2.4) ORPHANED; urgency=low
+aptosid-manual-reader (0.2.5) unstable; urgency=low
 
   [ Stefan Lippers-Hollmann ]
-  * temporarily ORPHAN PACKAGE, it's currently not compatible to parse the
-    structure of sidux-manual.
   * wrap debian/control in a syntax compliant way.
   * bump standards version to 3.9.1, no changes necessary.
   * switch to compact dh7 rules.
