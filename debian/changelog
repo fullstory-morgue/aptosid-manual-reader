@@ -1,3 +1,9 @@
+aptosid-manual-reader (0.2.6) UNRELEASED; urgency=low
+
+  * NOT RELEASED YET
+
+ -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 30 Sep 2010 22:55:21 +0200
+
 aptosid-manual-reader (0.2.5) unstable; urgency=low
 
   [ Stefan Lippers-Hollmann ]
@@ -17,9 +23,11 @@ aptosid-manual-reader (0.2.5) unstable; urgency=low
   * Commented out some aptosidcc specific code 
   * Do not highlight the words of the default search string 
   * Split loadManual function into smaller subfunctions
-  * Added some tests to keep the application from segfaulting if it doesnt find a chapter/id
+  * Added some tests to keep the application from segfaulting if it doesnt find
+    a chapter/id
   * Re-wrote parts of the code to be able to read the new manual structure
-  * Minor changes to allow the reader to display the images and use content.css from the manual
+  * Minor changes to allow the reader to display the images and use content.css
+    from the manual
 
  -- Nikolas Poniros <edhunter@aptosid.com>  Thu, 30 Sep 2010 22:17:40 +0200
 
