@@ -160,7 +160,9 @@ void Smr::showChapter(QString id) {
 	}
 
 	QString content = chaptersTreeWidget->findItems(id, Qt::MatchExactly, 1).first()->text(2);
-	content.prepend("<head><link href=\"/usr/share/aptosid-manual-reader/css/content.css\" rel=\"stylesheet\" type=\"text/css\" /></head>");
+	//content.prepend("<head><link href=\"/usr/share/aptosid-manual-reader/css/content.css\" rel=\"stylesheet\" type=\"text/css\" /></head>");
+	//content.prepend("<head><link href=\"/home/edhunter/fullstory-svn/aptosid-manual-reader/src/content.css\" rel=\"stylesheet\" type=\"text/css\" /></head>");
+	content.prepend("<head><link href=\"file:///usr/share/aptosid-manual/lib/css-js/content.css\" rel=\"stylesheet\" type=\"text/css\" /></head>");
 	// create alters
 	content.replace( QRegExp("<p class=\"highlight-2\">([^<]*)</p>"), "<table class=alert><tr><td class=noBorder><img src=\"/usr/share/aptosid-manual-reader/icons/software-update-urgent.svg\"></td><td class=noBorder>\\1</td></tr></table>");
 	content.replace( QRegExp("<div class=\"highlight-2\">([^<]*)</div>"), "<table class=alert><tr><td class=noBorder><img src=\"/usr/share/aptosid-manual-reader/icons/software-update-urgent.svg\"></td><td class=noBorder>\\1</td></tr></table>");
@@ -172,8 +174,8 @@ void Smr::showChapter(QString id) {
 			content.replace(" "+search+" ", " <b style=\"background-color:#FFFF66; font-size:x-large\">"+search+"</b> ");
 	}
 
- 	webView->setHtml(content);
-	
+	webView->setHtml(content);
+
 	// backMenu
 	backMenu->clear();
 	int i = 0;
@@ -547,6 +549,7 @@ void Smr::getEntries(QString page, QString manpath2)
 		id = "";
 		while( !h2IdList.contains(id) && !stream.atEnd() )
 		{
+
 			if(line.contains("<div class=\"divider\"") )
 			{
 				id = line.split("\"")[3];
@@ -601,7 +604,7 @@ void Smr::getEntries(QString page, QString manpath2)
 			content.replace("id=\"" + idList[i] + "\">", "");
 		}
 		content.replace(QRegExp("<div id=\"rev\">.*</div>"), "");
-		content.replace("../lib/", manpath + "lib/");
+		content.replace("../lib/", "file:///" + manpath + "lib/");
 
 		for (int i = 0; i < idList.size(); i++)
 		{
