@@ -130,6 +130,30 @@ void Smr::showIndex() {
 }
 
 //------------------------------------------------------------------------------
+//-- cover ---------------------------------------------------------------------
+//------------------------------------------------------------------------------
+
+void Smr::showCover() {
+	QFile file1( manpath + lang + "/cover-pdf-" + lang + ".htm" );
+	file1.open( QIODevice::ReadOnly | QIODevice::Text );
+	QTextStream stream( &file1 );
+	QString line = stream.readLine();
+	while (!line.contains("<!-- menu ends here -->") )
+		line = stream.readLine();
+	
+	QString content;
+	while ( !stream.atEnd() )
+	{
+		content = content + stream.readLine();
+	}
+	content.prepend("<head><link href=\"file:///usr/share/aptosid-manual/lib/css-js/content.css\" rel=\"stylesheet\" type=\"text/css\" />\n");
+	content.prepend("<link href=\"file:///usr/share/aptosid-manual/lib/css-js/version-date.css\" rel=\"stylesheet\" type=\"text/css\" /></head>");
+	content.replace("../lib", "file:///" + manpath + "/lib");
+	webView->setHtml(content);
+	stackedWidget->setCurrentIndex(2);
+}
+
+//------------------------------------------------------------------------------
 //-- content -------------------------------------------------------------------
 //------------------------------------------------------------------------------
 
@@ -433,10 +457,16 @@ void Smr::loadManual() {
 	getMenu(manpath2, pages[0]);
 
 	foreach(QString page, pages )
-		getEntries(page, manpath2);
+	{
+		if( page.contains("cover") )
+			continue;
+		else
+			getEntries(page, manpath2);
+	}
 
 	noHistory = true;
-	showIndex();
+	//showIndex();
+	showCover();
 }
 
 void Smr::getMenu(QString manpath2, QString page)

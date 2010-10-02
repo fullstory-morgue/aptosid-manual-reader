@@ -7,7 +7,6 @@ License GPL2
 #ifndef SMR_HEADER
 #define SMR_HEADER
 
-// #include "ui_smr.h"
 #include <QtGui/QMainWindow>
 #include <QBitArray>
 #include <QTreeWidget>
@@ -75,6 +74,7 @@ class Smr : public QMainWindow, Ui::Smr {
 		bool noHistory, start;
 		void getEntries(QString, QString);
 		void getMenu(QString, QString);
+		void showCover();
 
 };
 #endif
