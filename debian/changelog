@@ -1,9 +1,5 @@
-aptosid-manual-reader (0.2.7) UNRELEASED; urgency=low
+aptosid-manual-reader (0.2.7) unstable; urgency=low
 
-  [ Stefan Lippers-Hollmann ]
-  * NOT RELEASED YET
-
-  [ Nikolas Poniros ]
   * Use the cover-pdf-XX.htm page as frontpage and not the index.
 
  -- Nikolas Poniros <edhunter@aptosid.com>  Sat, 02 Oct 2010 17:44:55 +0200
