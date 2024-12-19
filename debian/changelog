@@ -1,7 +1,8 @@
 aptosid-manual-reader (0.2.8) ORPHANED; urgency=low
 
   * NOT RELEASED YET
-  * OPHAN PACKAGE
+  * ORPHAN PACKAGE
+  * refresh SVG graphics, shut up inkscape's migration from old versions.
 
  -- Stefan Lippers-Hollmann <s.l-h@gmx.de>  Thu, 20 Jan 2011 03:26:42 +0100
 
